@@ -2,16 +2,16 @@
 include("Template.php");
 require("../conect.php");
 $idCone = conectarlocalmente();
-$sql = "SELECT MAX(id) as id FROM empleados";
+$id =  $_POST['id'];
+
+$sql = "SELECT * FROM empleados WHERE serie LIKE '$id'";
 $query = mysqli_query($idCone,$sql);
- while($R = mysqli_fetch_array($query)){
-	 $id  = $R['id'];
-	 $sql2 =  "SELECT * FROM empleados WHERE id LIKE '$id'";
-	 $query = mysqli_query($idCone,$sql2);
-	 while($F= mysqli_fetch_array($query)){
+ while($F = mysqli_fetch_array($query)){
+	 
 		 $imagen = $F['imagen'];
 ?>
 <html>
+<link href="../Recursos/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <body>
 <div class="container">
 
@@ -29,7 +29,7 @@ $query = mysqli_query($idCone,$sql);
         <!-- Feature Row -->
         <div class="row">
             
-            <table width="242" height="100" border="1">
+            <table class="table-responsive" width="242" height="100" border="1">
               <tbody>
                 <tr>
                   <td><?php echo"<img src = '".$imagen."' width='100' height='120' >";?></td>
@@ -79,4 +79,4 @@ $query = mysqli_query($idCone,$sql);
 </html>
 <p>&nbsp;</p>
 <?php }
- }?>
+ ?>

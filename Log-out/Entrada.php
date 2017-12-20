@@ -1,7 +1,7 @@
 <?php 
 include("Template.php");
-require("conect.php");
-$idCone =  conectarlocal();
+require("../conect.php");
+$idCone =  conectarlocalmente();
 
 
 ?>

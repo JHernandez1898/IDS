@@ -84,7 +84,7 @@ require("Template.php");
                 <h3>
                     <a href="Entrada.php">Entrada</a>
                 </h3>
-                <p>Centro de reportes</p>
+                <p>Registre su entrada</p>
             </article>
 
             

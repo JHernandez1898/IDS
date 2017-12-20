@@ -1,7 +1,7 @@
 <?php 
 include("Template.php");
-require("conect.php");
-$idCone =  conectarlocal();
+require("..\conect.php");
+$idCone =  conectarlocalmente();
 
 
 ?>
@@ -10,12 +10,13 @@ $idCone =  conectarlocal();
 <head>
 <meta charset="utf-8">
 <title>Reimprimir</title>
+<link href="../Recursos/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 <center>
 <body >
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<table width="493" border="1" >
+<table class="table-responsive" width="493" border="1" >
   <tbody>
     <tr>
       <td style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-size: 36px;">REIMPRESION DE GAFET</td>

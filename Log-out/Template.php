@@ -12,7 +12,7 @@ ini_set('max_execution_time', 300);?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>Control IDS</title>
+    <title>Empleados IDS</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../Recursos/css/bootstrap.min.css" rel="stylesheet">
@@ -55,6 +55,9 @@ ini_set('max_execution_time', 300);?>
                     </li>
                     <li>
                         <a href="#">About</a>
+                    </li>
+                     <li>
+                        <a href="reimprimirgafet.php">Reimprimir Gafete</a>
                     </li>
                    
 		

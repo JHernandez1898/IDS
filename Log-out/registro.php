@@ -1,7 +1,7 @@
 <?php
 include("Template.php");
-require("conect.php");
-$idCone =  conectarlocal(); 
+require("../conect.php");
+$idCone =  conectarlocalmente(); 
 if($_POST){
 	$nombre = $_POST["nombre"];
 	$apellidos = $_POST["apellidos"];
@@ -42,6 +42,7 @@ if($_POST){
 <head>
 <meta charset="utf-8">
 <title>Nuevo</title>
+<link href="../Recursos/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -56,6 +57,7 @@ if($_POST){
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+<div class="table-hover">
 <form enctype="multipart/form-data" action="#" method="post">
 <table width="684" border="0" align="center">
   <tbody>
@@ -96,7 +98,7 @@ if($_POST){
     </tr>
     <tr>
       <td height="75" style="text-align: left"><p><strong>Autorización:
-            <input type="text" name="autorizacion" required>
+            <input type="password" name="autorizacion" required>
       </strong></p>
         <p>&nbsp;</p></td>
       <td style="text-align: left"><p>Fotografia:
@@ -115,6 +117,7 @@ if($_POST){
   </tbody>
 </table>
 </form>
+</div>
 </center>
 <p>&nbsp;</p>
 </body

@@ -42,7 +42,7 @@ ini_set('max_execution_time', 300);?>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="../index.html">
                 	<span class="icon-bar"><img class="active" src="../Recursos/Imagenes/logo.PNG" height="50" width="50"></span> 
                 	
                 </a>
@@ -51,7 +51,7 @@ ini_set('max_execution_time', 300);?>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="#">Home</a>
+                        <a href="../index.html">Home</a>
                     </li>
                     <li>
                         <a href="#">About</a>

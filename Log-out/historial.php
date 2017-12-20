@@ -1,8 +1,8 @@
 <?php
 require("Template.php");
-include("conect.php");
+include("../conect.php");
 date_default_timezone_set('America/Mexico_City');
-$idCone = conectarlocal();
+$idCone = conectarlocalmente();
 $date = date("Y-m-d");
 $fecnum = strtotime($date);
 if($_POST){
@@ -17,6 +17,7 @@ $query = mysqli_query($idCone,$sql);
 <!doctype html>
 <html>
 <head>
+ <link href="../Recursos/css/bootstrap.min.css" rel="stylesheet">
 <meta charset="utf-8">
 <title>Historial</title>
 </head>
@@ -33,6 +34,7 @@ $query = mysqli_query($idCone,$sql);
 </table>
 <p>&nbsp;</p>
 <p>
+<div class="tab-content">
 <form action="#" method="post">
   <label for="fecha">Fecha:</label>
   <input type="date" name="fecha" id="fecha">
@@ -68,7 +70,7 @@ $query = mysqli_query($idCone,$sql);
     <?php }?>
   </tbody>
 </table>
-
+</div>
 </body>
 </center>
 </html>

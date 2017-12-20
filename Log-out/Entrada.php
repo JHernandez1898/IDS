@@ -10,9 +10,11 @@ $idCone =  conectarlocalmente();
 <head>
 <meta charset="utf-8">
 <title>Entrada</title>
+<link href="../Recursos/css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <center>
 <body >
+<div class="table-responsive">
 <table width="200" border="1" >
   <tbody>
     <tr>
@@ -38,6 +40,7 @@ $idCone =  conectarlocalmente();
   </tbody>
 </table>
 </form>
+</div>
 <p>&nbsp;</p>
 </body>
 </center>

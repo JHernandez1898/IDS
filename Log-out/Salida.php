@@ -1,7 +1,7 @@
 <?php 
 include("Template.php");
-require("conect.php");
-$idCone =  conectarlocal();
+require("../conect.php");
+$idCone =  conectarlocalmente();
 
 
 ?>
@@ -10,9 +10,11 @@ $idCone =  conectarlocal();
 <head>
 <meta charset="utf-8">
 <title>Salida</title>
+<link href="../Recursos/css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <center>
 <body >
+<div class="tab-content">
 <table width="305" border="1" >
   <tbody>
     <tr>
@@ -37,7 +39,9 @@ $idCone =  conectarlocal();
     </tr>
   </tbody>
 </table>
+
 </form>
+</div>
 <p>&nbsp;</p>
 </body>
 </center>

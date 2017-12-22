@@ -7,7 +7,76 @@
 </head>
 <p>&nbsp;</p>
 <body>
-<table width="871" height="264" border="1" align="center">
+ <!-- Content -->
+    <div class="container">
+
+        <!-- Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Módulos
+                    
+                </h1>
+               
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Feature Row -->
+        <div class="row">
+            <article class="col-md-4 article-intro">
+                <a href="Log-out/index.php">
+                    <img class="img-rounded" src="Recursos/Imagenes/empleados.jpg" width="350" height="350" alt="">
+                </a>
+                <h3>
+                    <a href="registrovisitantes.php">Primera visita</a>
+                </h3>
+                <p>Registre aqui a las personas que visitan por primera vez</p>
+            </article>
+            <article class="col-md-4 article-intro">
+                <a href="Reportes/Index.php">
+                    <img class="img-rounded" src="Recursos/Imagenes/reportes.png" width="350" height="350" alt="">
+                </a>
+                <h3>
+                    <a href="registrarvisita.php">Registrar Visita</a>
+                </h3>
+                <p>Registro de visita de una persona ya registrada</p>
+            </article>
+
+            <article class="col-md-4 article-intro">
+                <a href="Visitantes/index.php">
+                    <img class="img-rounded " src="Recursos/Imagenes/visitas.gif" width="350" height="350" alt="">
+                </a>
+                <h3>
+                    <a href="reportes.php">Reportes</a>
+                </h3>
+                <p>Reportes de visitas</p>
+            </article>
+        </div>
+        </div>
+         <!-- Content -->
+    <div class="container">
+
+      
+        <!-- /.row -->
+
+        <!-- Feature Row -->
+        <div class="row">
+            <article class="col-md-4 article-intro">
+                <a href="Log-out/index.php">
+                    <img class="img-rounded" src="Recursos/Imagenes/empleados.jpg" width="350" height="350" alt="">
+                </a>
+                <h3>
+                    <a href="registrarsalida.php">Registrar Salida</a>
+                </h3>
+                <p>Registrar el fin de la visita</p>
+            </article>
+            
+
+            
+        </div>
+        </div>
+        
+<!--<table width="871" height="264" border="1" align="center">
   <tbody>
     <tr>
       <th bgcolor="#F8EC4B" scope="col"><a href="registrovisitantes.php" ><font size="+6">Nuevo Visitante</font></a></th>
@@ -19,6 +88,6 @@
      
     </tr>
   </tbody>
-</table>
+</table>-->
 </body>
 </html>

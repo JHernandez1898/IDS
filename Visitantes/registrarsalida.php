@@ -1,7 +1,7 @@
 <?php 
 include ('Template.php');
-include ('conect.php');
-$idCone =  conectarlocal();
+include ('../conect.php');
+$idCone =  conectarlocalmente();
 $sql =  "SELECT * FROM visitas WHERE(versalida LIKE '0')";
 $query = mysqli_query($idCone,$sql);
 ?>
@@ -10,6 +10,7 @@ $query = mysqli_query($idCone,$sql);
 <head>
 <meta charset="utf-8">
 <title>Registrar salida</title>
+<link href="../Recursos/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -17,7 +18,7 @@ $query = mysqli_query($idCone,$sql);
 <center>
 <p>Registrar Salida.</p>
 <form method="post" action="registrosalida.php">
-<table width="848" border="1">
+<table class="table-responsive success"  width="848" border="1">
   <tbody>
     <tr bgcolor="#6C85F7">
       <th width="69" scope="col">Fecha </th>

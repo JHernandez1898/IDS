@@ -1,7 +1,7 @@
 <?php 
 include ('Template.php');
-require('conect.php');
-$idCone =  conectarlocal();
+require('../conect.php');
+$idCone =  conectarlocalmente();
 $sql = "SELECT * FROM comunes";
 $query =  mysqli_query ($idCone,$sql);
 
@@ -11,6 +11,7 @@ $query =  mysqli_query ($idCone,$sql);
 <head>
 <meta charset="utf-8">
 <title>Registrar Visita</title>
+<link href="../Recursos/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 <center>
 <body><br>
@@ -24,7 +25,7 @@ $query =  mysqli_query ($idCone,$sql);
 <br>
 <font size="+3">Seleccione a el visitante</font><br><br>
 
-<form action = 'registrovisita.php' method="POST">
+<form class="table-bordered" action = 'registrovisita.php' method="POST">
 <select name ='visitante'> <?php while($F = mysqli_fetch_array($query)){ ?><option value="<?php echo $F['nombre']?>" > <?php echo $F['nombre'] ?><?php }  ?></option></select><br><br>
 
 

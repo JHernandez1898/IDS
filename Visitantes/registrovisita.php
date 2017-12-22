@@ -1,8 +1,8 @@
 <?php 
 date_default_timezone_set('America/Mexico_City');
 require('Template.php');
-require('conect.php');
-$idCone  = conectarlocal();
+require('../conect.php');
+$idCone  = conectarlocalmente();
 $nombre = $_POST['visitante'];
 $sql =  "SELECT * FROM comunes WHERE(nombre LIKE '$nombre')";
 $query =  mysqli_query($idCone,$sql);
@@ -14,6 +14,7 @@ $hora = date("H:i:s")
 <head>
 <meta charset="utf-8">
 <title>Registro de visita</title>
+<link href="../Recursos/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <center>
@@ -23,7 +24,7 @@ $hora = date("H:i:s")
 <br>
 <br>
 <form action="registroentrada.php" method="post">
-<table width="553" height="177" border="1">
+<table class="active tab-pane" width="553" height="177" border="1">
   <tbody>
     <tr>
       <th style="text-align: center; font-size: 36px;" scope="col" >Datos de la visita</th>

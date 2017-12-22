@@ -1,7 +1,7 @@
 <?php 
 include ('Template.php');
-include ('conect.php');
-$idCone =  conectarlocal();
+include ('../conect.php');
+$idCone =  conectarlocalmente();
 
 $date = date("Y-m-d");
 $fecnum = strtotime($date);
@@ -11,13 +11,14 @@ if($_POST){
 }
 $sql =  "SELECT * FROM visitas WHERE fecnum LIKE '$fecnum'"; 
 $query = mysqli_query($idCone,$sql);
-echo $fecnum;
+
 ?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Registrar salida</title>
+<link href="../Recursos/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -30,7 +31,7 @@ echo $fecnum;
 <form method="post" action="reportes.php">
 <label for="datetime">Dia:</label>
   <input type="date" name="fecha" id="fecha"><input type="submit" value ='Buscar'/>
-<table width="848" border="1">
+<table class="table-responsive alert-success"  width="848" border="1">
   <tbody>
     <tr bgcolor="#6C85F7">
       <th width="69" scope="col">Fecha </th>

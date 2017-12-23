@@ -1,7 +1,10 @@
 <?php 
 include("Template.php");
 require("../conect.php");
-$idCone =  conectarlocalmente(); ?>
+$idCone =  conectarlocalmente();
+$sql  = "SELECT * FROM traileractual WHERE ACTIVE LIKE '1'";
+$query = mysqli_query($idCone,$sql);
+ ?>
 <!doctype html>
 <html>
 <head>
@@ -29,7 +32,7 @@ $idCone =  conectarlocalmente(); ?>
         <div class="row">
         	<p>
         	  <article class="col-lg-10 active" >
-              <form action="fecha.php" method="post">
+              <form action="correr.php" method="post">
         	    <label for="date">Date:</label>
         	    <input type="date" name="date" id="date">
         	    <input type="submit" name="submit" id="submit" value="Buscar"> 
@@ -37,13 +40,14 @@ $idCone =  conectarlocalmente(); ?>
         	  </article>
               <article class="col-lg-1 active" >
         	   <form action="nuevaentrada.php">
-        	    <input type="submit" name="submit" id="submit" value="Submit"> 
+        	    <input type="submit" name="submit" id="submit" value="Nueva entrada"> 
         	   </form>
         	  </article>
        	  </p>
         	<p>&nbsp; </p>
           
             <article class="col-md-4 article-intro">
+            
               <table width="1142" border="1">
                 <tbody>
                   <tr>
@@ -61,21 +65,23 @@ $idCone =  conectarlocalmente(); ?>
                     <th width="162" scope="col"><p>Consignne</p>
                       (RDS, IDS etc.)</th>
                   </tr>
+                  <?php while($F = mysqli_fetch_array($query)){?>
                   <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td><?php echo $F["T_COMPANY"];?></td>
+                    <td><?php echo $F["T_NUMBER"];?></td>
+                    <td><?php echo $F["D_NAME"];?></td>
+                    <td><?php echo $F["DRIVER_ID"];?></td>
+                    <td><?php echo $F["TR_COMPANY"];?></td>
+                    <td><?php echo $F["TR_NUMBER"];?></td>
+                    <td><?php echo $F["N_SEAL"];?></td>
+                    <td><?php echo $F["LD/MT"];?></td>
+                    <td><?php echo $F["DELIVERY_D"];?></td>
+                    <td><?php echo $F["TIME IN"];?></td>
+                    <td><?php echo $F["TIME OUT"];?></td>
+                    <td><?php echo $F["CONSIGNNE"];?></td>
                   </tr>
                 </tbody>
+                <?php }?>
               </table>
                 
             </article>

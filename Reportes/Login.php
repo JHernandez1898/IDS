@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require("conect.php");
+require("../conect.php");
 $idCone = conectarlocalmente();
 $mensaje="";
 if (isset($_POST["txtUsuario"]) && isset($_POST["txtPassword"])) 

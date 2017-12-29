@@ -2,7 +2,7 @@
 session_start();
  if (!isset($_SESSION['User']))  header('Location: Login.php'); 
 include("Recursos/Template.php");
-require("conect.php");
+require("../conect.php");
 $idCliente = $_SESSION["id"];
 $idCone = conexion();
 $sql ="SELECT * FROM dbo.Trafico FULL OUTER JOIN dbo.tblNotaRevGen ON dbo.Trafico.traReferencia = dbo.tblNotaRevGen.Referencia WHERE traCli LIKE '$idCliente'";

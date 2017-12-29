@@ -2,7 +2,7 @@
 session_start(); 
 if (!isset($_SESSION['User']))  header('Location: Login.php'); 
 include("Recursos/Template.php");
-require "conect.php";
+require "../conect.php";
 $idCone = conexion();
 $id = $_SESSION["id"];
 

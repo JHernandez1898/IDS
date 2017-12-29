@@ -27,43 +27,53 @@ $idCone =  conectarlocalmente();
         	        <td width="285"><p>Truck Company:
        	            </p>
         	          <p>
-        	            <input type="text" name="textfield" id="textfield">
+        	            <input type="text" class="input-sm" name="truckcompany"  required>
       	              </p>
                     </td>
         	        <td width="262"><p>Truck Number:</p>
         	          <p>
-  					<input type="text" name="textfield6" id="textfield6">
+  					<input type="text" class="input-sm" name="trucknumber" required>
       	            </p></td>
       	        </tr>
         	      <tr>
-        	        <td><p>Driver name:</p>
-        	          <p>
-  <input type="text" name="textfield2" id="textfield2">
-      	            </p></td>
+        	        <td><p>Driver ID:</p>
+        	          <p><?php $sql =  "SELECT * FROM driver";
+					  $query = mysqli_query($idCone,$sql);
+					 
+					  ?>
+        	            <select name="driverid" class="input-sm">
+                         <?php while($F =  mysqli_fetch_array($query)){ 
+						 echo "<option value='".$F['DRIVER_ID']."'>".$F['DRIVER_ID']."</option>";
+						 }?>
+                         
+                        
+                        </select><a class="bg-success" href="nuevodriver.php">
+       	                <input type="button"  class="input-sm" name="Nuevo" id="Nuevo" value="Nuevo"></a>
+       	            </p></td>
         	        <td><p>Trailer Company:</p>
         	          <p>
-  <input type="text" name="textfield7" id="textfield7">
+  <input type="text" name="trailercompany" class="input-sm" required>
       	            </p></td>
       	        </tr>
         	      <tr>
         	        <td><p>Trailer Number:</p>
         	          <p>
-  <input type="text" name="textfield3" id="textfield3">
+  <input type="text" name="trailernumber" class="input-sm" required>
       	            </p></td>
         	        <td><p>Seal Number:
        	            </p>
         	          <p>
-        	            <input type="text" name="textfield8" id="textfield8">
+        	            <input type="text" class="input-sm" name="sealnumber" required>
       	            </p></td>
       	        </tr>
         	      <tr>
         	        <td><p>LD/MT:</p>
         	          <p>
-  <input type="text" name="textfield4" id="textfield4">
+  <input type="text" name="ld-mt" class="input-sm" required>
       	            </p></td>
         	        <td><p>Delivery Drop:</p>
         	          <p>
-  				<input type="text" name="textfield9" id="textfield9">
+  				<input type="text" name="deliverydrop" class="input-sm" required>
       	            </p></td>
       	        </tr>
         	      <tr>
@@ -81,7 +91,7 @@ $idCone =  conectarlocalmente();
         	          <p>
  					 <input type="date" name="date" class="input-sm" required>
       	            </p></td>
-        	        <td><input name="Registrar" type="submit" class="btn-success" id="Registrar" value="Registrar"></td>
+        	        <td><input name="Registrar" type="submit" class="btn-success input-sm id="Registrar" value="Registrar"></td>
       	        </tr>
       	      </tbody>
       	    </table>

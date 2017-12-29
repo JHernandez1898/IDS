@@ -1288,7 +1288,8 @@ h6,
   font-size: 12px;
 }
 p {
-  margin: 0 0 10px;
+	margin: 0 0 10px;
+	text-align: center;
 }
 .lead {
   margin-bottom: 20px;
@@ -2250,7 +2251,8 @@ pre code {
   }
 }
 table {
-  background-color: transparent;
+	background-color: transparent;
+	text-align: left;
 }
 caption {
   padding-top: 8px;

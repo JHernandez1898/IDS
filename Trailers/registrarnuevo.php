@@ -1,64 +1,78 @@
 <?php
 require("Template.php");
-include("conect.php");
+include("../conect.php");
 $idCone =  conectarlocalmente();
-
+date_default_timezone_set("America/Mexico_City");
 $truckcompany = $_POST['truckcompany'];
 $trucknumber = $_POST['trucknumber'];
-$drivername  =$_POST['driverid'];
+$driverid  =$_POST['driverid'];
+$sqldrive = "SELECT  *  FROM DRIVER WHERE DRIVER_ID LIKE '$driverid'";
+$query = mysqli_query($idCone,$sqldrive);
+$drivername ;
+if($F =  mysqli_fetch_array($query)){
+	$drivername =  $F['DNAME'];
+}
 $trailercompany  =$_POST['trailercompany'];
 $trailernumber = $_POST['trailernumber'];
 $sealnumber = $_POST['sealnumber'];
 $ld = $_POST['ld-mt'];
 $delivery = $_POST['deliverydrop'];
-$hora =  $_POST['hora'];
+$hora =  date("H:i:s"); 
 $consigna  = $_POST['consigna'];
 $date = $_POST['date'];
+$fecnum =  strtotime($date);
+$ref =  "SELECT MAX(REF) as MAX FROM traileractual";
+$queryref = mysqli_query($idCone,$ref);
+if($F =  mysqli_fetch_array($queryref)){
+	$ref  = $F['MAX'] +1;
+}
 
-$sql  = "INSERT INTO traileractual (T_COMPANY, T_NUMBER, D_NAME, `DRIVER_ID`, `TR_COMPANY`, `TR_NUMBER`, `N_SEAL`, `LD/MT`, `DELIVERY_D`, `TIME IN`, `TIME OUT`, `CONSIGNNE`, `FECNUM`, `WAITING`, `ACTIVE`) VALUES ('$truckcompany','$trucknumber','$drivername','$trailercompany',[value-6],[value-7],[value-8],[value-9],[value-10],[value-11],[value-12],[value-13],[value-14],[value-15],[value-16])";
+$sql  = "INSERT INTO traileractual  VALUES ('$ref','$truckcompany','$trucknumber','$drivername','$driverid','$trailercompany','$trailernumber','$sealnumber','$ld','$delivery','$hora','0','$consigna','$fecnum','0','1')";
+
+$sqlb  = "INSERT INTO trailerhistorico  VALUES ('$ref','$truckcompany','$trucknumber','$drivername','$driverid','$trailercompany','$trailernumber','$sealnumber','$ld','$delivery','$hora','0','$consigna','$fecnum','0','1')";
+
+//REF,T_COMPANY, T_NUMBER, D_NAME,DRIVER_ID, TR_COMPANY,TR_NUMBER,N_SEAL, LD/MT, DELIVERY_D, TIME IN,TIME OUT,CONSIGNNE,FECNUM,WAITING,ACTIVE
+
+try{
+$queryin = mysqli_query($idCone,$sql);
+$queryb =  mysqli_query($idCone,$sqlb);
+echo $drivername;
 
 ?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Nuevo driver</title>
+<title>Nueva entrada</title>
 <link href="../Recursos/css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="container">
     	<div class="row">
-        	<div class="col-lg-12">
-        	  <h1 class="page-header" style="text-align: left">Registrar Conductor</h1>
+        	<div class="col-lg-12"><h1 class="page-header" style="text-align: left">Nueva entrada 
+                </h1>
             </div>
         </div>
         
         <div class="row">
         	<article class="col-lg-12">
-            <form action="registrarconductor.php" method="post">
-              <table width="266" border="0" align="center">
-                <tbody>
-                  <tr>
-                    <td><p>Nombre:</p>
-                    <p>
-                      <input type="text" name="nombre" class="input-lg">
-                    </p></td>
-                  </tr>
-                  <tr>
-                    <td><p>ID:</p>
-                    <p>
-                      <input type="text" name="id" class="input-lg">
-                    </p></td>
-                  </tr>
-                  <tr>
-                    <td align="center"><input  type="submit" value="Registrar" class="input-lg btn-success">
-                      <a href="nuevaentrada.php">
-                      <input  type="button" value="Regresar" class="input-lg btn-warning">
-                    </a></td>
-                  </tr>
-                </tbody>
-              </table>
-            </form>
+            <?php 
+			
+			if($queryin&&$queryb){
+				header('Location: index.php');
+			
+			}
+			else{
+					?>
+				<p> Error </p>
+               
+				<?php	
+				echo mysqli_error($idCone);
+			}
+			}catch(Exception $ex){
+				echo $e->getMessage();
+			}
+			?>
         	</article>
         </div>
     </div>

@@ -25,7 +25,7 @@
         <div class="row">
             <article class="col-md-4 article-intro">
                 <a href="Log-out/index.php">
-                    <img class="img-rounded" src="Recursos/Imagenes/empleados.jpg" width="350" height="350" alt="">
+                    <img class="img-rounded" src="" width="350" height="350" alt="">
                 </a>
                 <h3>
                     <a href="registrovisitantes.php">Primera visita</a>
@@ -34,7 +34,7 @@
             </article>
             <article class="col-md-4 article-intro">
                 <a href="Reportes/Index.php">
-                    <img class="img-rounded" src="Recursos/Imagenes/reportes.png" width="350" height="350" alt="">
+                    <img class="img-rounded" src="" width="350" height="350" alt="">
                 </a>
                 <h3>
                     <a href="registrarvisita.php">Registrar Visita</a>
@@ -44,7 +44,7 @@
 
             <article class="col-md-4 article-intro">
                 <a href="Visitantes/index.php">
-                    <img class="img-rounded " src="Recursos/Imagenes/visitas.gif" width="350" height="350" alt="">
+                    <img class="img-rounded " src="" width="350" height="350" alt="">
                 </a>
                 <h3>
                     <a href="reportes.php">Reportes</a>
@@ -63,7 +63,7 @@
         <div class="row">
             <article class="col-md-4 article-intro">
                 <a href="Log-out/index.php">
-                    <img class="img-rounded" src="Recursos/Imagenes/empleados.jpg" width="350" height="350" alt="">
+                    <img class="img-rounded" src="" width="350" height="350" alt="">
                 </a>
                 <h3>
                     <a href="registrarsalida.php">Registrar Salida</a>

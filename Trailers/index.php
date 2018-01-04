@@ -1,6 +1,7 @@
 <?php 
 include("Template.php");
 require("../conect.php");
+date_default_timezone_set("America/Mexico_City");
 $idCone =  conectarlocalmente();
 $sql  = "SELECT * FROM traileractual WHERE ACTIVE LIKE '1'";
 $query = mysqli_query($idCone,$sql);
@@ -31,16 +32,17 @@ $query = mysqli_query($idCone,$sql);
         <!-- Feature Row -->
         <div class="row">
         	<p>
-        	  <article class="col-lg-10 active" >
-              <form action="correr.php" method="post">
-        	    <label for="date">Date:</label>
-        	    <input type="date" name="date" id="date">
-        	    <input type="submit" name="submit" id="submit" value="Buscar"> 
+        	  <article class="col-lg-9 active" >
+           		<?php echo  $hoy = date("F j, Y, g:i a");  ?>
+        	  </article>
+              <article class="col-lg-2 active" >
+               <form action="nuevaentrada.php" method="post">
+        	    <input type="submit" name="submit" id="submit" value="Nueva entrada"> 
         	   </form>
         	  </article>
-              <article class="col-lg-1 active" >
-        	   <form action="nuevaentrada.php">
-        	    <input type="submit" name="submit" id="submit" value="Nueva entrada"> 
+               <article class="col-lg-1 active" >
+               <form action="reportesentradas.php">
+        	    <input type="submit" name="submit" id="submit" value="Reportes"> 
         	   </form>
         	  </article>
        	  </p>
@@ -65,23 +67,46 @@ $query = mysqli_query($idCone,$sql);
                     <th width="162" scope="col"><p>Consignne</p>
                       (RDS, IDS etc.)</th>
                   </tr>
-                  <?php while($F = mysqli_fetch_array($query)){?>
-                  <tr>
-                    <td><?php echo $F["T_COMPANY"];?></td>
-                    <td><?php echo $F["T_NUMBER"];?></td>
-                    <td><?php echo $F["D_NAME"];?></td>
-                    <td><?php echo $F["DRIVER_ID"];?></td>
-                    <td><?php echo $F["TR_COMPANY"];?></td>
-                    <td><?php echo $F["TR_NUMBER"];?></td>
-                    <td><?php echo $F["N_SEAL"];?></td>
-                    <td><?php echo $F["LD/MT"];?></td>
-                    <td><?php echo $F["DELIVERY_D"];?></td>
-                    <td><?php echo $F["TIME IN"];?></td>
-                    <td><?php echo $F["TIME OUT"];?></td>
-                    <td><?php echo $F["CONSIGNNE"];?></td>
-                  </tr>
+                  <form method="post" action="nuevasalida.php">
+                  <?php while($F = mysqli_fetch_array($query)){
+					$ref = $F["REF"];
+					?><input type="hidden" name = "ref" value="<?php echo $ref?>"> <?php
+					$timeout =  $F["TIME_OUT"];
+					$active = $F['ACTIVE'];
+					if($active == "1" ){
+					?>  
+                        <tr class="label-success">
+                    <?php  
+					}
+					else{
+						?>  <tr class="label-danger"><?php
+					}?>    
+                        <td><?php echo $F["T_COMPANY"];?></td>
+                        <td><?php echo $F["T_NUMBER"];?></td>
+                        <td><?php echo $F["D_NAME"];?></td>
+                        <td><?php echo $F["DRIVER_ID"];?></td>
+                        <td><?php echo $F["TR_COMPANY"];?></td>
+                        <td><?php echo $F["TR_NUMBER"];?></td>
+                        <td><?php echo $F['N_SEAL'] ?></td>
+                        <td><?php echo $F["LD_MT"];?></td>
+                        <td><?php echo $F["DELIVERY_D"];?></td>
+                        <td><?php echo $F["TIME_IN"];?></td>
+                        <td><?php 
+                        if($timeout != "0"){
+                            echo $F["TIME_OUT"];
+                        }
+                        else{ 
+						?>
+                        	
+                            <input type='submit' class='btn-warning' value= 'Salida'>
+                            <?php
+                        }
+						?></td>
+                    	<td><?php echo $F["CONSIGNNE"];?>
+				 </tr>
                 </tbody>
-                <?php }?>
+                </form>
+				 <?php  }?>
               </table>
                 
             </article>

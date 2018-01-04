@@ -20,7 +20,7 @@ $idCone =  conectarlocalmente();
         
         <div class="row">
         	<article class="col-lg-12">
-            <form action="registrarnuevaentrada.php" method="post">
+            <form action="registrarnuevo.php" method="post">
         	  <table width="563" border="0" align="center">
         	    <tbody>
         	      <tr>
@@ -77,21 +77,21 @@ $idCone =  conectarlocalmente();
       	            </p></td>
       	        </tr>
         	      <tr>
-        	        <td><p>Time:</p>
-                      <p>
-                        <input type="time" name="hora" class="input-sm" required>
-                    </p></td>
         	        <td><p>Consignne:</p>
-        	          <p>
-        	            <input type="text" name="consigna" class="input-sm" required>
-      	            </p></td>
+                      <p>
+                        <input type="text" name="consigna" class="input-sm" required>
+                    </p></td>
+        	        <td><p>Date:</p>
+                      <p>
+                        <input type="date" name="date" class="input-sm" required>
+                    </p></td>
        	          </tr>
         	      <tr>
-        	        <td><p>Date:</p>
-        	          <p>
- 					 <input type="date" name="date" class="input-sm" required>
-      	            </p></td>
-        	        <td><input name="Registrar" type="submit" class="btn-success input-sm id="Registrar" value="Registrar"></td>
+        	        <td><p>&nbsp;</p></td>
+        	        <td><input name="Registrar" type="submit" class="btn-success input-sm" id="Registrar" value="Registrar"></td>>
+        	          <a href="index.php">
+        	          <input  type="button" class="btn-warning input-sm"value="Regresar">
+       	            </a></td>
       	        </tr>
       	      </tbody>
       	    </table>

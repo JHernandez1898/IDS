@@ -87,11 +87,11 @@ $idCone =  conectarlocalmente();
                     </p></td>
        	          </tr>
         	      <tr>
-        	        <td><p>&nbsp;</p></td>
-        	        <td><input name="Registrar" type="submit" class="btn-success input-sm" id="Registrar" value="Registrar"></td>>
-        	          <a href="index.php">
+        	        <td><p> <a href="index.php">
         	          <input  type="button" class="btn-warning input-sm"value="Regresar">
-       	            </a></td>
+       	            </a></p></td>
+        	        <td><input name="Registrar" type="submit" class="btn-success input-sm" id="Registrar" value="Registrar"></td>
+        	         
       	        </tr>
       	      </tbody>
       	    </table>

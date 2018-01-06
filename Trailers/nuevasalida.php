@@ -21,7 +21,7 @@ $hora = date("g:i a");
             </div>
         </div>
          <div class="row">
-        	<article class="col-lg-10">
+        	<article class="col-lg-10  text-info alert alert-info">
            <p> SE AUTORIZA LA SALIDA DE LAS MERCANCIAS QUE A CONTINUACION SE INDICAN PARA QUE SEAN ENTREGADAS A QUIEN SE IDENTIFIQUE Y FIRME AL CALCE DE ESTA FORMA
         	</article>
            

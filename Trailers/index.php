@@ -35,24 +35,21 @@ $query = mysqli_query($idCone,$sql);
         	  <article class="col-lg-9 active" >
            		<?php echo  $hoy = date("F j, Y, g:i a");  ?>
         	  </article>
-              <article class="col-lg-2 active" >
+              <article class="col-lg-3 active" >
                <form action="nuevaentrada.php" method="post">
-        	    <input type="submit" name="submit" id="submit" value="Nueva entrada"> 
-        	   </form>
+        	    <input type="submit" name="submit" class="btn btn-default" id="submit" value="Nueva entrada"> 
+                <a href="reportes"><input type="button" class="btn btn-default" name="submit2" id="submit2" value="Reportes"></a>
+         		</form>
         	  </article>
-               <article class="col-lg-1 active" >
-               <form action="reportesentradas.php">
-        	    <input type="submit" name="submit" id="submit" value="Reportes"> 
-        	   </form>
-        	  </article>
+               
        	  </p>
         	<p>&nbsp; </p>
           
-            <article class="col-md-4 article-intro">
+            <article class="col-md-12 article-intro">
             
-              <table width="1142" border="1">
+              <table class="table" width="1142" border="1">
                 <tbody>
-                  <tr>
+                  <tr style="background-color:#88D3CF">
                     <th width="107" scope="col">Truck Company</th>
                     <th width="70" scope="col">Truck Number</th>
                     <th width="49" scope="col">Driver Name</th>
@@ -76,11 +73,11 @@ $query = mysqli_query($idCone,$sql);
 					$ref = $F["REF"];
 					if($active == "1" ){
 					?>  
-                        <tr class="label-success">
+                        <tr  style=" background-color:#E56262">
                     <?php  
 					}
 					else{
-						?>  <tr class="label-danger"><?php
+						?>  <tr style=" background-color:#5EC867"><?php
 					}?>    
                         <td><?php echo $F["T_COMPANY"];?></td>
                         <td><?php echo $F["T_NUMBER"];?></td>
@@ -101,7 +98,7 @@ $query = mysqli_query($idCone,$sql);
 						?>
                        		<form method="post" action="nuevasalida.php">	
                         	<input type="hidden" name = "ref" value="<?php echo $ref?>"> 
-                            <input type='submit' class='btn-warning' value= 'Salida'>
+                            <input type='submit' class='btn btn-warning' value= 'Salida'>
                             </form>
                             <?php
                         }
@@ -110,8 +107,8 @@ $query = mysqli_query($idCone,$sql);
                      
                          
                          <form action="detalles.php" method="post">
-                         <input type="hidden" name = "ref" value="<?php echo $ref?>">
-                        <td><input type='submit' class='btn-default' value= 'Detalles'></td>
+                         <input type="hidden"  name = "ref" value="<?php echo $ref?>">
+                        <td><input type='submit' class="btn" class='btn-default' value= 'Detalles'></td>
                         </form>
                         
 				 </tr>

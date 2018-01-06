@@ -2,7 +2,8 @@
 include("Template.php");
 require("../conect.php");
 $idCone =  conectarlocalmente();
-
+$ref  =$_POST["ref"];
+$hora = date("g:i a");
  ?>
 <!doctype html>
 <html>
@@ -14,12 +15,13 @@ $idCone =  conectarlocalmente();
 <body>
 <div class="container">
     	<div class="row">
-        	<div class="col-lg-12"><h1 class="page-header" style="text-align: left">ORDEN DE SALIDA DE MERCANCIAS
-                </h1>
+        	<div class="col-lg-12">
+            	<h1 class="page-header" style="text-align: left">ORDEN DE SALIDA DE MERCANCIAS
+               </h1>
             </div>
         </div>
          <div class="row">
-        	<article class="col-lg-6">
+        	<article class="col-lg-10">
            <p> SE AUTORIZA LA SALIDA DE LAS MERCANCIAS QUE A CONTINUACION SE INDICAN PARA QUE SEAN ENTREGADAS A QUIEN SE IDENTIFIQUE Y FIRME AL CALCE DE ESTA FORMA
         	</article>
            
@@ -27,6 +29,8 @@ $idCone =  conectarlocalmente();
         <div class="row">
        	  <article class="col-lg-6">
             <form action="registrarsalida.php" method="post">
+            <input type="hidden" name="ref" value = "<?php echo $ref ?>"> 
+            <input type="hidden" name="hora" value = "<?php echo $hora ?>"> 
         	  <table width="678" border="0" align="left">
         	    <tbody>
         	      <tr>
@@ -89,7 +93,7 @@ $idCone =  conectarlocalmente();
       	        </tr>
       	      </tbody>
       	    </table>
-           </form>
+       
        	  </article>
           	<article class="col-lg-4">
           	  <table width="200" border="0" align="center">

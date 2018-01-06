@@ -3,7 +3,7 @@ include("Template.php");
 require("../conect.php");
 date_default_timezone_set("America/Mexico_City");
 $idCone =  conectarlocalmente();
-$sql  = "SELECT * FROM traileractual WHERE ACTIVE LIKE '1'";
+$sql  = "SELECT * FROM traileractual ";
 $query = mysqli_query($idCone,$sql);
  ?>
 <!doctype html>
@@ -66,13 +66,14 @@ $query = mysqli_query($idCone,$sql);
                     <th width="107" scope="col">Time out</th>
                     <th width="162" scope="col"><p>Consignne</p>
                       (RDS, IDS etc.)</th>
+                    <th width="107" scope="col"></th>
                   </tr>
-                  <form method="post" action="nuevasalida.php">
+                 
                   <?php while($F = mysqli_fetch_array($query)){
-					$ref = $F["REF"];
-					?><input type="hidden" name = "ref" value="<?php echo $ref?>"> <?php
+					
 					$timeout =  $F["TIME_OUT"];
 					$active = $F['ACTIVE'];
+					$ref = $F["REF"];
 					if($active == "1" ){
 					?>  
                         <tr class="label-success">
@@ -96,16 +97,26 @@ $query = mysqli_query($idCone,$sql);
                             echo $F["TIME_OUT"];
                         }
                         else{ 
+					
 						?>
-                        	
+                       		<form method="post" action="nuevasalida.php">	
+                        	<input type="hidden" name = "ref" value="<?php echo $ref?>"> 
                             <input type='submit' class='btn-warning' value= 'Salida'>
+                            </form>
                             <?php
                         }
 						?></td>
-                    	<td><?php echo $F["CONSIGNNE"];?>
+                    	<td><?php echo $F["CONSIGNNE"];?></td>
+                     
+                         
+                         <form action="detalles.php" method="post">
+                         <input type="hidden" name = "ref" value="<?php echo $ref?>">
+                        <td><input type='submit' class='btn-default' value= 'Detalles'></td>
+                        </form>
+                        
 				 </tr>
                 </tbody>
-                </form>
+              
 				 <?php  }?>
               </table>
                 
@@ -113,6 +124,5 @@ $query = mysqli_query($idCone,$sql);
     
         </div>
     </div>
-    <!-- /.container -->
 </body>
 </html>

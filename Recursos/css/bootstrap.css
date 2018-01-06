@@ -3224,7 +3224,7 @@ fieldset[disabled] .btn-primary.active {
 	color: #fff;
 	background-color: #398439;
 	border-color: #255625;
-	text-align: right;
+	text-align: center;
 }
 .btn-success:active,
 .btn-success.active,

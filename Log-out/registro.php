@@ -46,79 +46,80 @@ if($_POST){
 </head>
 
 <body>
-<center>
-<table width="490" border="0">
-  <tbody>
-    <tr>
-      <td style="font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif; font-size: 36px;">Registrar  nuevo empleado<span style="font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, serif; color: #000000;"></span></td>
-    </tr>
-  </tbody>
-</table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<div class="table-hover">
-<form enctype="multipart/form-data" action="#" method="post">
-<table width="684" border="0" align="center">
-  <tbody>
-    <tr>
-      <td width="352" style="text-align: left"><p><strong>Nombre:
-            <input type ="text" name="nombre" required>
-      </strong></p>
-        <p>&nbsp;</p></td>
-      <td width="322" style="text-align: left"><p><strong>Apellidos:
-            <input type ="text" name ="apellidos" required>
-      </strong></p>
-        <p>&nbsp;</p>
-        <p></p></td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><p><strong>Dirección:
-            <input type="text" name="direccion" required>
-      </strong></p>
-        <p>&nbsp;</p></td>
-      <td style="text-align: left"><p><strong>Inicio de labores:
-            <input type = "date" name="inicio" required>
-      </strong></p>
-        <p>&nbsp;</p></td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><p><strong>Puesto:
-            <input type="text" name="puesto" required>
-      </strong></p>
-        <p>&nbsp;</p>
-        <p></p></td>
-      <td style="text-align: left"><p><strong>Estado:
-            <select name="estado">
-              <option value="1">Activo</option>
-              <option value="0">Inactivo</option>
-            </select>
-      </strong></p>
-        <p>&nbsp;</p></td>
-    </tr>
-    <tr>
-      <td height="75" style="text-align: left"><p><strong>Autorización:
-            <input type="password" name="autorizacion" required>
-      </strong></p>
-        <p>&nbsp;</p></td>
-      <td style="text-align: left"><p>Fotografia:
-          <input type="file" name="userfile"/>
-      </p>
-        <p>&nbsp;</p></td>
-    </tr>
-    <tr>
-      <td style="text-align: left"><p>&nbsp;</p></td>
-      <td style="text-align: right"><p>&nbsp;
-        </p>
-        <p>
-          <input type="submit" name="continuar" value="Registrar">
-        </p></td>
-    </tr>
-  </tbody>
-</table>
-</form>
+<div class=" container">
+	<div class="row">
+    	<h1 class="page-header" style="font:Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, serif">
+        	Registrar  nuevo empleado
+        </h1>
+    </div>
+    <div class="row">
+    	<article class="col-lg-10">
+        <form enctype="multipart/form-data" action="#" method="post">
+            <table width="684" border="0" >
+              <tbody>
+                <tr>
+                  <td width="352" style="text-align: left"><p><strong>Nombre:
+                        </strong></p>
+                    <p><strong>
+                      <input type ="text" name="nombre" required>
+                    </strong></p>
+                  <p>&nbsp;</p></td>
+                  <td width="322" style="text-align: left"><p><strong>Apellidos:</strong></p>
+                    <p><strong>
+  <input type ="text" name ="apellidos" required>
+                    </strong></p>
+                    <p>&nbsp;</p>
+                    <p></p></td>
+                </tr>
+                <tr>
+                  <td style="text-align: left"><p><strong>Dirección:</strong></p>
+                    <p><strong>
+  <input type="text" name="direccion" required>
+                    </strong></p>
+                  <p>&nbsp;</p></td>
+                  <td style="text-align: left"><p><strong>Inicio de labores:</strong></p>
+                    <p><strong>
+  <input type = "date" name="inicio" required>
+                    </strong></p>
+                  <p>&nbsp;</p></td>
+                </tr>
+                <tr>
+                  <td style="text-align: left"><p><strong>Puesto:</strong></p>
+                    <p><strong>
+  <input type="text" name="puesto" required>
+                    </strong></p>
+                    <p>&nbsp;</p>
+                    <p></p></td>
+                  <td style="text-align: left"><p><strong>Estado:</strong></p>
+                    <p><strong>
+  <select name="estado">
+    <option value="1">Activo</option>
+    <option value="0">Inactivo</option>
+  </select>
+                    </strong></p>
+                  <p>&nbsp;</p></td>
+                </tr>
+                <tr>
+                  <td height="75" style="text-align: left"><p><strong>Autorización:</strong></p>
+                    <p><strong>
+  <input type="password" name="autorizacion" required>
+                    </strong></p>
+                  <p>&nbsp;</p></td>
+                  <td style="text-align: left"><p>Fotografia:
+                      <input type="file" name="userfile"/>
+                  </p>
+                    <p>&nbsp;</p></td>
+                </tr>
+                <tr>
+                  <td style="text-align: left"><p><a href="index.php"><input type="button" value="Regresar" class="btn btn-warning btn-sm"></a></p></td>
+                  <td style="text-align: right"><p><input type="submit" class="btn btn-success btn-sm" name="continuar" value="Registrar"></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            </form>
+        </article>
+    </div>
 </div>
-</center>
-<p>&nbsp;</p>
-</body
-></html>
+</body>
+</html>

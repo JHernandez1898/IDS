@@ -28,7 +28,11 @@ if( $conn ) {
  }
  function Mostrar_info($query,$idCone){
 	 ?>
-      <table width="834" border="1">
+<link href="Recursos/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<div class="container">
+     <div class="row">
+     <article class="col-lg-12">
+      <table class="table table-striped table-bordered" width="834" border="1">
         <tbody>
           <tr>
             <th width="22" bgcolor="#6C85F7" scope="col">N°</th>
@@ -85,6 +89,8 @@ if( $conn ) {
           <?php }?>
         </tbody>
       </table>
-	 
+	</article>
+    </div> 
+    </div>
 	 <?php
  }?>

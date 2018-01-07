@@ -33,7 +33,7 @@
 		   if($F = mysqli_fetch_array($queryentrada)){
 			   $horasalida = $F["TIME_OUT"];
 		   ?>
-   	      <table width="333" border="0" class="table table-striped">
+   	      <table width="333" border="0" class="table table-striped table-bordered">
        	      <tbody>
        	        <tr>
        	          <td>Truck Company:</td>
@@ -93,11 +93,11 @@
             	Salida
         </h4>
         <?php if($F = mysqli_fetch_array($querysalida)){ ?>
-        	<table width="200" class="table table-striped" border="0">
+        	<table width="200" class="table table-striped table-bordered" border="0">
         	  <tbody>
         	    <tr>
-        	      <td>Fecha de salida</td>
-        	      <td><?php  echo date("Y-m-d",$F["fecnum"]); ?></td>
+        	      <td width="48%">Fecha de salida</td>
+        	      <td width="52%"><?php  echo date("Y-m-d",$F["fecnum"]); ?></td>
       	      </tr>
         	    <tr>
         	      <td>Hora de salida</td>

@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 include("Template.php");
 require("conect.php");
 $idCone = conectarlocalmente();

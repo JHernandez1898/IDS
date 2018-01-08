@@ -3,11 +3,13 @@ date_default_timezone_set('America/Mexico_City');
 require('Template.php');
 require('../conect.php');
 $idCone  = conectarlocalmente();
-$nombre = $_POST['visitante'];
-$sql =  "SELECT * FROM comunes WHERE(nombre LIKE '$nombre')";
+$id = $_POST['visitante'];
+echo $id;
+$sql =  "SELECT * FROM comunes WHERE(id LIKE '$id')";
 $query =  mysqli_query($idCone,$sql);
 $date =  date("Y-m-d");
-$hora = date("H:i:s")
+$hora = date("H:i:s");
+if($D = mysqli_fetch_array($query)){
 ?>
 <!doctype html>
 <html>
@@ -17,54 +19,64 @@ $hora = date("H:i:s")
 <link href="../Recursos/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div class="container">
+	<div class="row">
+    	<h1 class="page-header" style="text-align:center">
+        	Datos de la visita
+        </h1>
+    </div>
+    
+    <div class="row">
+    <article class="col-lg-1">
+    </article>
+    
+    <article class="col-lg-10">
+    	<form action="registroentrada.php" method="post">
+      	<table class="table table-bordered" width="544" border="1">
+        <tbody>
+          <tr >
+            <th>Fecha</th>
+            <th><input type="date" name="fecha" value="<?php echo $date ?>" readonly></th>
+            <th>Visitara a:</th>
+            <th><input type="visitara" required name="visitara"></th>
+          </tr>
+          <tr>
+            <td>Nombre:</td>
+            <td><input name="nombre" type="text" value ="<?php  echo $D['nombre']; ?>" size="50" readonly ></td>
+            <td>Area:</td>
+            <td><input type="text" required name="area" ></td>
+          </tr>
+          <tr>
+            <td>ID:</td>
+            <td><input type="text" name="id" value="<?php echo $D['id']; ?>" readonly ></td>
+            <td>Hora de entrada</td>
+            <td><input type="time" name="horaentrada" value="<?php echo $hora?>" readonly></td>
+          </tr>
+          <tr>
+            <td>Compañia:</td>
+            <td><input type="text" name="compania"  value="<?php echo $D['compania'];?>" readonly></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+  <input class="btn btn-sm btn-success" type="submit" value="Registrar">
+</p>
+</form>
+    </article>
+    
+    <article class="col-lg-1">
+    </article>
+	</div>
+</div>
 <center>
 <br>
 <br>
 <br>
 <br>
 <br>
-<form action="registroentrada.php" method="post">
-<table class="active tab-pane" width="553" height="177" border="1">
-  <tbody>
-    <tr>
-      <th style="text-align: center; font-size: 36px;" scope="col" >Datos de la visita</th>
-    </tr>
-    <tr>
-      <td><table width="544" border="1">
-        <tbody>
-          <tr style="text-align: left">
-            <th scope="col">Fecha</th>
-            <th scope="col"><input type="date" name="fecha" value="<?php echo $date ?>" readonly></th>
-            <th scope="col">Visitara a:</th>
-            <th scope="col"><input type="visitara" name="visitara"></th>
-          </tr>
-          <tr>
-            <td>Nombre:</td>
-            <td><input type="text" name="nombre" value ="<?php if($D = mysqli_fetch_array($query)){ echo $D['nombre'];} ?>" readonly ></td>
-            <td>Area:</td>
-            <td><input type="text" name="area" ></td>
-          </tr>
-          <tr>
-            <td>ID:</td>
-            <td><input type="text" name="id" value="<?php if($D = mysqli_fetch_array($query)){ echo $D['id'];} ?>" readonly ></td>
-            <td>Hora de entrada</td>
-            <td><input type="time" name="horaentrada" value="<?php echo $hora?>" readonly></td>
-          </tr>
-          <tr>
-            <td>Compañia:</td>
-            <td><input type="text" name="compania"  value="<?php if($D = mysqli_fetch_array($query)){ echo $D['compania'];} ?>" readonly></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table></td>
-    </tr>
-  </tbody>
-</table>
-<p>
-  <input type="submit" value="Registrar">
-</p>
-</form>
+
 </center>
 </body>
 </html>
+<?php } ?>

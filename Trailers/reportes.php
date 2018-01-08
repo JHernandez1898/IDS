@@ -1,115 +1,46 @@
-<?php 
-include("Template.php");
-require("../conect.php");
-
-date_default_timezone_set("America/Mexico_City");
+<?php
+require("Template.php");
+include("../conect.php");
 $idCone =  conectarlocalmente();
-$date = date("Y-m-d");
-$fecnum =  strtotime($date);
-$sql = "SELECT * FROM date";
-$query = mysqli_query($idCone,$sql);
-$ayer;
-
-if($F =  mysqli_fetch_array($query)){
-	$ayer = $F["fecnum"];
-		
-}
-
+$date =  date("Y-m-d");
+$fecnum = strtotime("yesterday");
 echo $fecnum;
-echo "<br>";
- echo strtotime("yesterday");
+$sql  = "SELECT * FROM trailerhistorico WHERE FECHIS LIKE '$fecnum'";
 
-if(!($ayer == $fecnum)){
-	$sqlx  ="SELECT *  FROM traileractual";
-	$query  = mysqli_query($idCone,$sqlx);
-	while($F = mysqli_fetch_array($query)){
-		$ref = $F["REF"];
-		$trailecr = $F["T_COMPANY"];
-		$tnumber= $F["T_NUMBER"];
-		$dname = $F["D_NAME"];
-		$driverid = $F["DRIVER_ID"];
-		$trcompany = $F["TR_COMPANY"];
-		$trnumber = $F["TR_NUMBER"];
-		$nseal = $F["N_SEAL"];
-		$ld = $F["LD_MT"];
-		$delivery = $F["DELIVERY_D"];
-		$timein = $F["TIME_IN"];
-		$timeout = $F["TIME_OUT"];
-		$consigne = $F["CONSIGNNE"];
-		$fec = $F["FECNUM"];
-		$waiting = $F["WAITING"];
-		$active = $F["ACTIVE"];
-		$sqltrailer = "INSERT INTO trailerhistorico VALUES ('$ref','$trailecr','$tnumber','$dname','$driverid','$trcompany','$trnumber','$nseal','$ld','$delivery','$timein','$timeout','$consigne','$fec','$ayer','$waiting','$active')";
-		$querytrailer = mysqli_query($idCone,$sqltrailer);
-		if($querytrailer){
-			echo "exito";
-			
-		}else{
-			echo "fail";
-			echo mysqli_error($idCone);
-		}
-
-		
-	}
-	$delete = "DELETE FROM traileractual WHERE ACTIVE LIKE '0'";
-	$QUERYDELETE = mysqli_query($idCone,$delete);
-	if($QUERYDELETE){
-		echo "exito";
-	}else{
-		echo "fail";
-	}
-	$sqlfec = "UPDATE date SET fecnum  = '$fecnum' ";
-	$queryfec =mysqli_query($idCone,$sqlfec);
-	if($queryfec){
-		
-	}
-	
+if($_POST){
+	$fecha = strtotime(date($_POST["fecha"]));
+	$sql  = "SELECT * FROM trailerhistorico WHERE FECHIS LIKE '$fecha'";
 }
-$sql  = "SELECT * FROM traileractual ";
 $query = mysqli_query($idCone,$sql);
- ?>
+?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Trailers</title>
+<title>IDS</title>
 <link href="../Recursos/css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="../Recursos/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
- <!-- Content -->
-    <div class="container">
-
-        <!-- Heading -->
-        <div class="row">
-          <div class="col-lg-12">
-                <h1 class="page-header">Trailers
-                    
-            </h1>
-               
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Feature Row -->
-        <div class="row">
-        	<p>
-        	  <article class="col-lg-9 active" >
-           		<?php echo  $hoy = date("F j, Y, g:i a");  ?>
-        	  </article>
-              <article class="col-lg-3 active" >
-               <form action="nuevaentrada.php" method="post">
-        	    <input type="submit" name="submit" class="btn btn-default" id="submit" value="Nueva entrada"> 
-                <a href="reportes"><input type="button" class="btn btn-default" name="submit2" id="submit2" value="Reportes"></a>
-         		</form>
-        	  </article>
-               
-       	  </p>
-        	<p>&nbsp; </p>
-          
-            <article class="col-md-12 article-intro">
-            
-              <table class="table" width="1142" border="1">
+<div class="container">
+	<div class="row">
+   	  <h1 class="page-header" style="text-align:center">
+        	Reportes diarios
+        </h1> 
+    </div>
+    
+    <div class="row">
+    	<article class="col-lg-4">
+          <form action="reportes.php" method="post">
+    	  <label for="date">Fecha:</label>
+          <input class="input-sm" type="date" name="fecha" >
+          <input type="submit" name="submit" class="btn btn-info btn-sm" id="submit" value="Buscar">
+          </form>
+        </article>
+    </div>
+    
+    <div class="row">
+    	<article class="col-lg-12">
+        		<table class="table" width="1142" border="1">
                 <tbody>
                   <tr style="background-color:#88D3CF">
                     <th width="107" scope="col">Truck Company</th>
@@ -170,7 +101,7 @@ $query = mysqli_query($idCone,$sql);
                          
                          <form action="detalles.php" method="post">
                          <input type="hidden"  name = "ref" value="<?php echo $ref?>">
-                        <td><input type='submit' class="btn" class='btn-default' value= 'Detalles'></td>
+                        <td><input type='submit' class="btn btn-default btn-sm" value= 'Detalles'></td>
                         </form>
                         
 				 </tr>
@@ -178,10 +109,8 @@ $query = mysqli_query($idCone,$sql);
               
 				 <?php  }?>
               </table>
-                
-            </article>
-    
-        </div>
+        </article>
     </div>
+</div>
 </body>
 </html>

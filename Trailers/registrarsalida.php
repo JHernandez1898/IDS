@@ -36,12 +36,9 @@ $sql =  "INSERT INTO salidashistorico VALUES ('$ref','$fecha','$bultos', '$descr
 ",'$linea','$cargos','$monto','$motivo','$autorizado','$entregado','$recibido','$fecnum')";
 
 $sqlupdate= "UPDATE traileractual SET TIME_OUT = '$hora' ,WAITING  = '$espera', ACTIVE = '0' WHERE (REF like '$ref')";
-$sqlupdate2= "UPDATE trailerhistorico SET TIME_OUT = '$hora' ,WAITING  = '$espera',ACTIVE = '0' WHERE (REF like '$ref')";
 
 $queryupdate = mysqli_query($idCone,$sqlupdate);
 $error2 =  mysqli_error($idCone);
-$queryupdate2  = mysqli_query($idCone,$sqlupdate2);
-$error3 =  mysqli_error($idCone);
 $query = mysqli_query($idCone,$sql);
 
 ?>
@@ -64,7 +61,7 @@ $query = mysqli_query($idCone,$sql);
     <div class="row">
     	<article class="col-lg-12">
        	 	<?php
-				if($query&&$queryupdate&&$queryupdate2){
+				if($query&&$queryupdate){
 					?>
                     <p class="label-success" style="text-decoration:!important"> Registro de salida exitoso</p>
 					<?php

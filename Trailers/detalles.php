@@ -3,8 +3,9 @@
  require("../conect.php");
  $idCone =  conectarlocalmente();
  $ref = $_POST['ref'];
- $sqlentrada =  "SELECT * FROM traileractual WHERE(REF LIKE '$ref')";
+ $sqlentrada =  "SELECT * FROM trailerhistorico WHERE(REF LIKE '$ref') UNION SELECT * FROM traileractual WHERE(REF LIKE '$ref')";
  $queryentrada  = mysqli_query($idCone,$sqlentrada);
+mysqli_error($idCone);
 
  $sqlsalida =  "SELECT * FROM salidashistorico WHERE (REF LIKE '$ref')";
  $querysalida  = mysqli_query($idCone,$sqlsalida);

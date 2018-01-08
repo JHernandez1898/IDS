@@ -10,18 +10,14 @@ $_SESSION["idped"] = $id;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>IDS</title>
-    <div class="col-sm-8 text-left"> 
-      <h1>Bienvenido</h1>
-      <p></p>
-      <hr>
-      <h3></h3>
-      <p></p>
+<title>IDS</title>
+ <link href="../Recursos/css/bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+ <body>
+ <div class="container">
+ 	<div class="row">
+    	<h1 class="page-header">Bienvenido</h1>
     </div>
-    <div class="col-sm-2 sidenav">
-      
-    </div>
-  </div>
-</div>
-</body>
+ </div>
+ </body>
 </html>

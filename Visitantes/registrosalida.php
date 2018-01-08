@@ -1,11 +1,11 @@
 <?php 
 date_default_timezone_set('America/Mexico_City');
 require('Template.php');
-require('conect.php');
-$idCone  = conectarlocal();
-$nombre = $_POST['nombre'];
-$fecha = $_POST['fecha'];
-$sql =  "SELECT * FROM visitas WHERE(nombre LIKE '$nombre'  AND versalida LIKE '0')";
+require('../conect.php');
+$idCone  = conectarlocalmente();
+$id = $_POST["id"];
+$fecha = $_POST['date'];
+$sql =  "SELECT * FROM visitas WHERE(id like '$id' and fecha like '$fecha')";
 $query =  mysqli_query($idCone,$sql);
 $date =  date("Y-m-d");
 $hora = date("H:i");
@@ -15,23 +15,21 @@ $hora = date("H:i");
 <head>
 <meta charset="utf-8">
 <title>Registro de visita</title>
+<link href="../Recursos/css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<center>
-<br>
-<br>
-<br>
-<br>
-<br>
-<form action="registrofinal.php" method="post">
+<div class="container">
+	<div class="row">
+    	<h1 class="page-header">
+        		Datos de Salida
+        </h1>
+    </div>
+    
+    <div class="row">
+    	<article class="col-lg-12">
+        		<form action="registrofinal.php" method="post">
 <?php if($D = mysqli_fetch_array($query)){ ?>
-<table width="553" height="177" border="1">
-  <tbody>
-    <tr>
-      <th style="text-align: center; font-size: 36px;" scope="col" >Datos de la visita</th>
-    </tr>
-    <tr>
-      <td><table width="544" border="1">
+	<table class = "table table-bordered" width="544" border="1">
         <tbody>
           <tr style="text-align: left">
             <th scope="col">Fecha</th>
@@ -58,15 +56,18 @@ $hora = date("H:i");
             <td><input type='time' name="horasalida" value = "<?php  echo $hora; ?>"></td>
           </tr>
         </tbody>
-      </table></td>
-    </tr>
-  </tbody>
-</table>
+      </table>
 <p>
-<?php } ?>
-  <input type="submit" value="Registrar">
+<?php } ?><br>
+
+  <input type="submit" class="btn btn-sm btn-success" value="Registrar"><br>
+<br><br>
+
+  <a href="registrarsalida.php"><input type="button" class="btn btn-sm btn-warning" value="Regresar"></a>
 </p>
 </form>
-</center>
+        </article>
+    </div>
+</div>
 </body>
 </html>

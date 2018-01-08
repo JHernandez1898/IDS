@@ -21,22 +21,29 @@ $hora =  date("H:i:s");
 $consigna  = $_POST['consigna'];
 $date = $_POST['date'];
 $fecnum =  strtotime($date);
+$ref =  "SELECT MAX(REF) as MAX FROM traileractual";
+$queryref = mysqli_query($idCone,$ref);
+if($F =  mysqli_fetch_array($queryref)){
+	$refact  = $F['MAX'] + 1;
+}
 $ref =  "SELECT MAX(REF) as MAX FROM trailerhistorico";
 $queryref = mysqli_query($idCone,$ref);
 if($F =  mysqli_fetch_array($queryref)){
-	$ref  = $F['MAX'] +1;
+	$refhis  = $F['MAX'] + 1;
 }
 
-$sql  = "INSERT INTO traileractual  VALUES ('$ref','$truckcompany','$trucknumber','$drivername','$driverid','$trailercompany','$trailernumber','$sealnumber','$ld','$delivery','$hora','0','$consigna','$fecnum','0','1')";
+if($refact>$refhis){
+	$ref = $refact;
+}else{
+	$ref = $refhis;
+}
+$sql  = "INSERT INTO traileractual  VALUES ('$ref','$truckcompany','$trucknumber','$drivername','$driverid','$trailercompany','$trailernumber','$sealnumber','$ld','$delivery','$hora','0','$consigna','$fecnum','0','0','1')";
 
-$sqlb  = "INSERT INTO trailerhistorico  VALUES ('$ref','$truckcompany','$trucknumber','$drivername','$driverid','$trailercompany','$trailernumber','$sealnumber','$ld','$delivery','$hora','0','$consigna','$fecnum','0','1')";
 
 //REF,T_COMPANY, T_NUMBER, D_NAME,DRIVER_ID, TR_COMPANY,TR_NUMBER,N_SEAL, LD/MT, DELIVERY_D, TIME IN,TIME OUT,CONSIGNNE,FECNUM,WAITING,ACTIVE
 
 try{
 $queryin = mysqli_query($idCone,$sql);
-$queryb =  mysqli_query($idCone,$sqlb);
-echo $drivername;
 
 ?>
 <!doctype html>
@@ -58,7 +65,7 @@ echo $drivername;
         	<article class="col-lg-12">
             <?php 
 			
-			if($queryin&&$queryb){
+			if($queryin){
 				header('Location: index.php');
 			
 			}

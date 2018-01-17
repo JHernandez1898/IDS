@@ -85,7 +85,7 @@ if( $conn ) {
 			?></td>
             <td><?php echo $F["TIPO_REG"]; ?></td>
             <td><?php  echo $F["Pedimento"];?></td>
-            <td><a href="C:\Trafico\INDISEIN\DIGITALIZACION\PEDIMENTO\<?php echo $F["traReferencia"]; ?>.pdf"><?php echo $F["traReferencia"]?></a></td>
+            <td><a href="Anexos\PEDIMENTO\<?php echo $F["traReferencia"]; ?>.pdf"><?php echo $F["traReferencia"]?></a></td>
           </tr>
           <?php }?>
         </tbody>

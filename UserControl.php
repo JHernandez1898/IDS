@@ -13,7 +13,6 @@ $idCone = conectarlocalmente();
   if (isset($_GET["txtIdEm"])) $IdEm=$_GET["txtIdEm"]; else $IdEm="";
   if (isset($_GET["txtIds"])) $Ids=mysqli_real_escape_string($idCone,$_GET["txtIds"]); else $Ids="";
 
-
 if (isset($_GET["action"])) {
  if ($_GET["action"]=="Limpiar") {   header('Location: UserControl.php');  }
  if ($_GET["action"]=="Grabar") {

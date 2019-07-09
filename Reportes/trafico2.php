@@ -114,7 +114,7 @@ $c = 0
 				echo $T["Nom"];
 			}
 			?></td>
-            <td><a href=".../Reportes/Anexos/PEDIMENTO<?php echo $R["traReferencia"]; ?>.pdf"><?php echo $R["traReferencia"]?></a></td>
+            <td><a href=".../Trafico/INDISEIN/DIGITALIZACION/PEDIMENTO/<?php echo $R["traReferencia"]; ?>.pdf"><?php echo $R["traReferencia"]?></a></td>
           </tr>
           <?php }
 	  }?>

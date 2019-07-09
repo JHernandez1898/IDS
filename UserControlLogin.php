@@ -53,14 +53,14 @@ tr,td {  border: 0px;  }
 </style>
 </head>
 <body bgcolor="#FFFFFF" >
-<form method="POST">s
-<table width="100%" height="100%" align="center">
+<form method="POST">
+<table width="50%" height="50%" align="center">
 <tr valign="top">
  <td>
-  <table width="100%" height="100%" align="center">
+  <table width="25%" height="25%" align="center">
   <tr valign="top">
    <td>
-     <img src=".../imagenes/logo_tlc.png" />
+     <img src="../IDSNET/Recursos/imagenes/logo_login.png" />
    </td>
   </tr>
   </table>  

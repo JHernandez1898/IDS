@@ -44,14 +44,10 @@ $query = sqlsrv_query($idCone,$sql);
             <td><input type="text" name="clave"></td>
             <td>Aduana E/S</td>
             <td><input type="text" name="aduana"></td>
-			<td>&nbsp;</td>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
-            <th scope="row">Fecha Inicial</th>
-            <td><input type="date" name="fecha_inicial"></td>
-            <td>Fecha Final</td>
-            <td><input type="date" name="fecha_final" value="0/0/0"></td>
-		  <tr>
+          <tr>
             <th>&nbsp;</th>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -108,8 +104,7 @@ if($_POST){
 		$sqlclave = "SELECT * FROM dbo.Trafico FULL OUTER JOIN dbo.tblNotaRevGen ON dbo.Trafico.traReferencia = 					dbo.tblNotaRevGen.Referencia WHERE CLAVEPED LIKE '$clave'";
 		$queryclave = sqlsrv_query($idCone, $sqlclave);
 		Mostrar_info($queryclave,$idCone);
-	
-}
+	}
 	
 }
 else

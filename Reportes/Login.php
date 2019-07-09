@@ -36,7 +36,7 @@ if (isset($_POST["txtUsuario"]) && isset($_POST["txtPassword"]))
 	<body bgcolor="#1F3ECF">
 		<div  class="login-page">
 			<div class="font">
-				<center> <img src="Recursos/logo.PNG" width="100" height="100" ><br>
+				<center> <img src="Recursos/imagenes/logo.PNG" width="100" height="100" ><br>
 					<font size="+1">International Dispatch Services. Inc</font><center>
 			</div>
 			<div class="form">

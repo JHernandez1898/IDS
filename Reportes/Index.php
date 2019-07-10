@@ -1,23 +1,65 @@
-<?php
+<?php 
 session_start();
 if (!isset($_SESSION['User']))  header('Location: Login.php'); 
-include ("Recursos/Template.php");
-echo $_SESSION["id"];
-$id = $_SESSION["id"];
-$_SESSION["idped"] = $id;
-
-?>
-<!DOCTYPE html>
-<html lang="en">
+ ?>
+<!doctype html5>
+<html>
 <head>
-<title>IDS</title>
- <link href="../Recursos/css/bootstrap.css" rel="stylesheet" type="text/css">
+<meta charset="utf-8">
+<title>Reportes IDS</title>
+<link rel="stylesheet" href="css/estilo.css">
+<link rel="stylesheet" href="css/pedimentos.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/pedimentos.js"></script>
+
 </head>
- <body>
- <div class="container">
- 	<div class="row">
-    	<h1 class="page-header">Bienvenido</h1>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li class="logo"><img src="img/logo.png"> </li>
+            <li><a href="pedimento.php">Pedimentos</a></li>
+            <li>Trafico</li>
+            <li>Facturas</li>
+            <li>Estados de Cuenta (MX)</li>
+            <li>Estados de Cuenta (US)</li>
+        </ul>
+    </nav>
+    <div class="titulo">
+        <h1>Búsqueda de Pedimentos</h1>
+        <span>En el siguiente apartado puede buscar pedimientos</span>
     </div>
- </div>
- </body>
-</html>
+</header>
+    
+<section class="busqueda">
+        <article class="parametros">
+            
+            <form id="frmBusqueda" method="post">
+                <table class="tablabusqueda">
+                    <tr><th>Parametros de Búsqueda</th></tr>
+                <tr><td>
+                    <span class="label">Referencia:</span>
+                    <input class="textbox" type="text" name="ref" id="ref">
+                    <span class="label">Pedimento:</span>
+                    <input class="textbox" type="text" name="ped" id="ped">
+                    <span class="label">Clave de Pedimento:</span>
+                    <input class="textbox" type="text" name="clv" id="ped"><br>
+                    <span class="label">Fecha Inicial:</span>
+                    <input type="date" name="fec_ini" id="fec_ini">
+                    <span class="label">Fecha Final:</span>
+                    <input type="date" name="fec_fin" id="fec_fin">
+                    <input type="submit" onclick="BuscarPedimentos()" value="Buscar" class="btn">
+                    </td>
+                </tr>
+                </table>
+             </form>  
+         </article>
+    </section>
+    <section class="resultado">
+        <article>
+            <table class='tablapedimentos' id="contenido">
+            </table>
+    </article>
+    </section>
+     </body>
+     </html>

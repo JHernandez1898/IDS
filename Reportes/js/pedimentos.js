@@ -16,6 +16,9 @@ $("#frmBusqueda").submit(function(e){
                     
                     
                     html +="<tr><td>"+(i+1)+"</td><td>"+val[i][0]+"</td> <td>"+val[i][1]+"</td> <td>"+val[i][2]+"</td><td>"+val[i][3]+"</td> <td>"+val[i][4]+"</td> <td>"+val[i][5]+"</td><td>"+val[i][6]+"</td> ";
+                    
+                    if(fileExists("Anexos/PEDIMENTO/"+val[i][0])){ alert("olv");}
+                    
                     html+="<td><a href='Anexos/PEDIMENTO/"+val[i][0]+".pdf'?><img title='Pedimento' src='img/pdf.png'></a>";
                     html+="<a href='Anexos/FACTURA/"+val[i][0]+".pdf'?><img title='Factura' src='img/factura.png'></a>";
                     html+="<a href='Anexos/CUENTAS MEXICANAS/"+val[i][0]+".pdf'?><img title='Cuentas Mexicanas' src='img/mex.png'></a>";

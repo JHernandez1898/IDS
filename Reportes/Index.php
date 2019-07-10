@@ -18,8 +18,8 @@ if (!isset($_SESSION['User']))  header('Location: Login.php');
     <nav>
         <ul>
             <li class="logo"><img src="img/logo.png"> </li>
-            <li><a href="pedimento.php">Pedimentos</a></li>
-            <li>Trafico</li>
+            <li><a href="index.php">Pedimentos</a></li>
+            <li><a href="trafico.php">Trafico</a></li>
             <li>Facturas</li>
             <li>Estados de Cuenta (MX)</li>
             <li>Estados de Cuenta (US)</li>
@@ -36,7 +36,7 @@ if (!isset($_SESSION['User']))  header('Location: Login.php');
             
             <form id="frmBusqueda" method="post">
                 <table class="tablabusqueda">
-                    <tr><th>Parametros de Búsqueda</th></tr>
+                    <tr><th>Parámetros de Búsqueda</th></tr>
                 <tr><td>
                     <span class="label">Referencia:</span>
                     <input class="textbox" type="text" name="ref" id="ref">
@@ -49,6 +49,7 @@ if (!isset($_SESSION['User']))  header('Location: Login.php');
                     <span class="label">Fecha Final:</span>
                     <input type="date" name="fec_fin" id="fec_fin">
                     <input type="submit" onclick="BuscarPedimentos()" value="Buscar" class="btn">
+                    <input type="hidden" id="cli" name="cli" value="<?php echo $_SESSION["Numero"]; ?>">
                     </td>
                 </tr>
                 </table>

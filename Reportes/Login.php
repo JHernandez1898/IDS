@@ -19,6 +19,7 @@ if (isset($_POST["txtUsuario"]) && isset($_POST["txtPassword"]))
 		if($rows == 1)
 		{
 			$_SESSION["User"] = 1;
+            $_SESSION["Numero"] = $txtNombre;
 			header('Location: index.php');
 			$mensaje ="";
 		}

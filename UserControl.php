@@ -6,7 +6,7 @@ $idCone = conectarlocalmente();
   if (!isset($_SESSION['AdminUser']))  header('Location: UserControlLogin.php'); 
   if (isset($_GET["Logout"])) { unset($_SESSION["AdminUser"]); }
   $mensaje="";
- 
+echo MD5("secre722");
   if (isset($_GET["id"])) $id=$_GET["id"]; else $id="0"; 
   if (isset($_GET["txtUsuario"])) $Usuario=$_GET["txtUsuario"]; else $Usuario="";
   if (isset($_GET["txtContrasenia"])) $Contrasenia=$_GET["txtContrasenia"]; else $Contrasenia="";

@@ -1,9 +1,9 @@
 .busqueda{
-    margin-left: 250px;
+    margin-left: 225px;
     margin-top: 50px;
 }
 .parametros {
-    width: 1050px;
+    width: 1100px;
     height: auto;
 }
 .tablabusqueda {
@@ -38,8 +38,8 @@
     
 }
 .resultado{
-    margin-left: 250px;
-    width: 1050px;
+    margin-left: 225px;
+    width: 1100px;
 }
 .tablapedimentos {
     overflow:scroll;

@@ -18,11 +18,8 @@ if (!isset($_SESSION['User']))  header('Location: Login.php');
     <nav>
         <ul>
             <li class="logo"><img src="img/logo.png"> </li>
-            <li><a href="index.php">Pedimentos</a></li>
-            <li><a href="trafico.php">Trafico</a></li>
-            <li>Facturas</li>
-            <li>Estados de Cuenta (MX)</li>
-            <li>Estados de Cuenta (US)</li>
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="Login.php">Salir</a></li>
         </ul>
     </nav>
     <div class="titulo">
@@ -36,31 +33,33 @@ if (!isset($_SESSION['User']))  header('Location: Login.php');
             
             <form id="frmBusqueda" method="post">
                 <table class="tablabusqueda">
-                    <tr><th>Parámetros de Búsqueda</th></tr>
-                <tr><td>
-                    <span class="label">Referencia:</span>
-                    <input class="textbox" type="text" name="ref" id="ref">
-                    <span class="label">Pedimento:</span>
-                    <input class="textbox" type="text" name="ped" id="ped">
-                    <span class="label">Clave de Pedimento:</span>
-                    <input class="textbox" type="text" name="clv" id="ped"><br>
-                    <span class="label">Fecha Inicial:</span>
-                    <input type="date" name="fec_ini" id="fec_ini">
-                    <span class="label">Fecha Final:</span>
-                    <input type="date" name="fec_fin" id="fec_fin">
-                    <input type="submit" onclick="BuscarPedimentos()" value="Buscar" class="btn">
-                    <input type="hidden" id="cli" name="cli" value="<?php echo $_SESSION["Numero"]; ?>">
-                    </td>
-                </tr>
+                    <tr>
+                        <th>Parámetros de Búsqueda</th></tr>
+                    <tr>
+                        <td>
+                            <span class="label">Referencia:</span>
+                            <input class="textbox" type="text" name="ref" id="ref">
+                            <span class="label">Pedimento:</span>
+                            <input class="textbox" type="text" name="ped" id="ped">
+                            <span class="label">Clave de Pedimento:</span>
+                            <input class="textbox" type="text" name="clv" id="ped"><br>
+                            <span class="label">Fecha Inicial:</span>
+                            <input type="date" name="fec_ini" id="fec_ini">
+                            <span class="label">Fecha Final:</span>
+                            <input type="date" name="fec_fin" id="fec_fin">
+                            <input type="submit" onclick="BuscarPedimentos()" value="Buscar" class="btn">
+                            <input type="hidden" id="cli" name="cli" value="<?php echo $_SESSION["Numero"]; ?>">
+                        </td>
+                    </tr>
                 </table>
-             </form>  
-         </article>
+            </form>  
+        </article>
     </section>
-    <section class="resultado">
-        <article>
-            <table class='tablapedimentos' id="contenido">
-            </table>
-    </article>
-    </section>
-     </body>
-     </html>
+        <section class="resultado">
+            <article>
+                <table class='tablapedimentos' id="contenido">
+                </table>
+            </article>
+        </section>
+    </body>
+</html>

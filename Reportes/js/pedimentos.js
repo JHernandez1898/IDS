@@ -17,12 +17,12 @@ $("#frmBusqueda").submit(function(e){
                     if(doc[1]== 1) html+="<td><a href='Anexos/FACTURA/"+val[i][0]+".pdf' target = '_blank'><img title='Factura' src='img/factura.png'></a></td>";else html+="<td></td>";
                     if(doc[2] == 1)html+="<td><a href='Anexos/CUENTAS MEXICANAS/"+val[i][0]+".pdf' target = '_blank'><img title='Cuentas Mexicanas' src='img/mex.png'></a></td>";else html+="<td></td>";
                     if(doc[3] == 1) html+="<td><a href='Anexos/CUENTAS AMERICANAS/"+val[i][0]+".pdf' target = '_blank'><img title='Cuentas Americanas' src='img/usa.png'></a></td>";else html+="<td></td>";
-                    if(doc[4] == 1)html+="<td><a href='Anexos/HOJA DE CALCULO/"+val[i][0]+".pdf' target = '_blank'><img title='Cuentas Americanas' src='img/excel.png'></a></td>";else html+="<td></td>";
+                    if(doc[4] == 1)html+="<td><a href='Anexos/HOJA DE CALCULO/"+val[i][0]+".pdf' target = '_blank'><img title='Cuentas Americanas' src='img/excel.png' width ='16' height ='16'></a></td>";else html+="<td></td>";
                     html+="</tr>";
-                 }
-                html+="</tbody>";
-                $("#contenido").html(html);
             }
+            html+="</tbody>";
+            $("#contenido").html(html);
+        }
         });
     });
 }
@@ -37,7 +37,7 @@ $.ajax({
             doc = eval(response);
         }
     });
-    return doc;
+return doc;
 }
 
                             

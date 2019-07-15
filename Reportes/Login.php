@@ -13,7 +13,7 @@ $_SESSION["User"] = null;
         <header>
             <nav>
                 <ul>   
-                    <li class="logo"><img src="img/logo.png"></li>
+                    <li class="logo" ><a href="../index.html" ><img class="imglogo" src="img/logo.png"></a></li>
                     <li>Reportes</li>
                     <li>Empleados</li>
                     <li>Visitas</li>

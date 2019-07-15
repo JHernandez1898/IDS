@@ -20,6 +20,7 @@ if (!isset($_SESSION['User']))  header('Location: Login.php');
             <li class="logo"><img src="img/logo.png"> </li>
             <li><a href="index.php">Inicio</a></li>
             <li><a href="Login.php">Salir</a></li>
+            <?php if($_SESSION["Numero"] == 0){?><li><a href="UserControl.php">Usuarios</a></li><?php }?>
         </ul>
     </nav>
     <div class="titulo">

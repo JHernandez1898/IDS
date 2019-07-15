@@ -56,11 +56,15 @@ a{
   
     text-decoration: none;
 }
+.logo a {
+    padding-bottom: 0px;
+    padding-top: 2px;
+}
 .logo {
      margin-right: 60%;
      margin-top: -9px;
 }
-.logo img{
+ .imglogo {
    
     margin-left: 20px;
     width: 35px;
@@ -73,19 +77,21 @@ a{
     margin-left: 33%;
     margin-right: 33%;
     padding-top:1%;
-    background-color: darkseagreen;
+    background-color:rgba(25,25,25,0.37);
     height: 50%;
-    border-radius: 5px;
     -webkit-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
+    border-top-color: darkslategray;
+    border-top-style: solid;
+    border-top-width: thick;
    
 }
 .Titulo{
     margin-left: 30%;
     font-size: 40px;
     color: white;
-       
+    font-weight: bold;
 }
 .menregistro{
     color: aliceblue;
@@ -99,14 +105,16 @@ a{
     margin-left: 15%;
     margin-top: 4%;
     margin-bottom:  3%;
+    padding-left: 10px;
 }
 .btn{
-    width: 30%;
-    margin-left: 35%;
+    width: 70%;
     height: 10%;
-    background-color: white;
-    border-radius: 10px;
-    color: black;
+    margin-left: 15%;
+    background-color: darkslategray;
+    
+    color: white;
+    font-weight: bold;
     border-style: hidden;
 }
 .btn:hover{

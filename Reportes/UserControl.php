@@ -1,9 +1,8 @@
 <?php
-session_start();
 require("conect.php");
 $idCone = conectarlocalmente();
 	
-  if (!isset($_SESSION['AdminUser']))  header('Location: UserControlLogin.php'); 
+  if ($_SESSION['Numero']!=0)  header('Location: UserControlLogin.php'); 
   if (isset($_GET["Logout"])) { unset($_SESSION["AdminUser"]); }
   $mensaje="";
 echo MD5("secre722");

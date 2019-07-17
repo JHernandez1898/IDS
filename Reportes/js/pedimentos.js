@@ -26,6 +26,21 @@ $("#frmBusqueda").submit(function(e){
         });
     });
 }
+function BuscarClientes(){
+     $.ajax({
+            type: "POST",
+            async: false,
+            url: 'php/Clientes.php',
+            success: function(response){
+                var val = eval(response);
+                var html ="<option value='0'>*</option>";
+                for(i = 0;i<val.length;i++) {
+                    html +="<option value= "+val[i][0]+" > "+val[i][1]+"</option>";
+                }               
+                $("#Clientes").html(html);
+            }
+        });
+}
 function fileExists(name) {
 var doc ;
 $.ajax({

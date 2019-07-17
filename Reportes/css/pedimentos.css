@@ -16,10 +16,12 @@
 }
 .tablabusqueda td, .tablabusqueda th {
     border: 1px solid #ddd;
-    padding: 8px;   
+    padding: 8px;
+
+
 }
-.tablabusqueda tr:nth-child(even){background-color: white;} 
-.tablabusqueda tr:hover {background-color: #ddd;}
+.tablabusqueda tr:nth-child(even){background-color: darkgray;} 
+.tablabusqueda tr:hover {background-color:darkgray;}
 .tablabusqueda th {
     padding-top: 1px;
     padding-bottom: 1px;
@@ -61,4 +63,7 @@
     text-align: left;
     background-color: darkcyan;
     color: white;
+}
+.Clientes{
+    width: auto;
 }

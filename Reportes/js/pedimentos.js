@@ -9,7 +9,7 @@ $("#frmBusqueda").submit(function(e){
             {
                 $("#contenido").html(" ");
                 var val = eval(response);
-                var html = " <tbody><tr><th>N°</th><th>Refererencia</th><th>Pedimento</th><th>Fecha</th><th>Cliente</th><th>Proveedor</th><th>Impo/Expo</th><th>Regimen </th><th>PED</th><th>FAC</th><th>MXN</th><th>USA</th><th>CAL</th></tr>";
+                var html = " <tbody><tr><th>N°</th><th>Refererencia</th><th>Pedimento</th><th>Fecha</th><th>Cliente</th><th>Proveedor</th><th>Impo/Expo</th><th>Regimen </th><th>PED</th><th>FAC</th><th>MXN</th><th>USA</th><th>CAL</th><th>VAL</th></tr>";
                 for(i = 0;i<val.length;i++) {
                     html +="<tr><td>"+(i+1)+"</td><td>"+val[i][0]+"</td> <td>"+val[i][1]+"</td> <td>"+val[i][2]+"</td><td>"+val[i][3]+"</td> <td>"+val[i][4]+"</td> <td>"+val[i][5]+"</td><td>"+val[i][6]+"</td>";
                     var  doc =fileExists(val[i][0]+".pdf");   

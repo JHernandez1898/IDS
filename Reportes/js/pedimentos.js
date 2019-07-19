@@ -18,7 +18,7 @@ $("#frmBusqueda").submit(function(e){
                     if(doc[2] == 1)html+="<td><a href='Anexos/CUENTAS MEXICANAS/"+val[i][0]+".pdf' target = '_blank'><img title='Cuentas Mexicanas' src='img/mex.png'></a></td>";else html+="<td></td>";
                     if(doc[3] == 1) html+="<td><a href='Anexos/CUENTAS AMERICANAS/"+val[i][0]+".pdf' target = '_blank'><img title='Cuentas Americanas' src='img/usa.png'></a></td>";else html+="<td></td>";
                     if(doc[4] == 1)html+="<td><a href='Anexos/HOJA DE CALCULO/"+val[i][0]+".pdf' target = '_blank'><img title='Hoja de Calculo' src='img/excel.png' width ='16' height ='16'></a></td>";else html+="<td></td>";
-                    if(doc[5] == 1)html+="<td><a href='Anexos/MANIFIESTO DE VALOR/"+val[i][0]+".pdf' target = '_blank'><img title='Manifiesto de Valor' src='img/excel.png' width ='16' height ='16'></a></td>";else html+="<td></td>";
+                    if(doc[5] == 1)html+="<td><a href='Anexos/MANIFESTACION DE VALOR/"+val[i][0]+".pdf' target = '_blank'><img title='Manifiesto de Valor' src='img/excel.png' width ='16' height ='16'></a></td>";else html+="<td></td>";
                     html+="</tr>";
             }
             html+="</tbody>";

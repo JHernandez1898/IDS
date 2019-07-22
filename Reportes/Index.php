@@ -1,6 +1,7 @@
 <?php 
 session_start();
-if (!isset($_SESSION['User']))  header('Location: Login.php'); 
+if (!isset($_SESSION['User']))  header('Location: Login.php');
+
  ?>
 <!doctype html5>
 <html>
@@ -25,7 +26,8 @@ if (!isset($_SESSION['User']))  header('Location: Login.php');
             <li class="logo"><img src="img/logo.png"> </li>
             <li><a href="index.php">Inicio</a></li>
             <li><a href="Login.php">Salir</a></li>
-            <?php if($_SESSION["Numero"] == 0){?><li><a href="UserControl.php">Usuarios</a></li><?php }?>
+            <?php 
+            if($_SESSION["permiso"] == 1){?><li><a href="UserControl.php">Usuarios</a></li><?php }?>
         </ul>
     </nav>
     <div class="titulo">
@@ -49,7 +51,7 @@ if (!isset($_SESSION['User']))  header('Location: Login.php');
                             <input class="textbox" type="text" name="ped" id="ped">
                             <span class="label">Clave de Pedimento:</span>
                             <input class="textbox" type="text" name="clv" id="ped"><br>
-                            <?php if($_SESSION["Numero"] == 0) {?>
+                            <?php if($_SESSION["permiso"] == 1) {?>
                             <span class='label'>Cliente: </span>
                             <select class='selectpicker' data-show-subtext='true' data-live-search='true' name="Clientes"  id="Clientes">
                             </select>

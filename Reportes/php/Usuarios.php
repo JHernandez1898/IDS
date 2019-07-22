@@ -20,7 +20,8 @@ switch($funcion){
         $pass = $_POST["pass"];
         $numero = $_POST["num"];
         $estatus = $_POST["estatus"];
-        $datos  = array($nombre,$pass,$numero,$estatus);
+        $permiso = $_POST["permiso"];
+        $datos  = array($nombre,$pass,$numero,$estatus,$permiso);
         $resultado = $lstUsuarios->ModificarUsuario($datos,$numeroviejo);
         echo $resultado;
         break;
@@ -29,7 +30,8 @@ switch($funcion){
         $pass = $_POST["pass"];
         $numero = $_POST["num"];
         $estatus = $_POST["estatus"];
-        $datos  = array($nombre,$pass,$numero,$estatus);
+        $permiso = $_POST["permiso"];
+        $datos  = array($nombre,$pass,$numero,$estatus,$permiso);
         $resultado = $lstUsuarios->CrearUsuario($datos);
         echo $resultado;
         break;

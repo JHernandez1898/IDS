@@ -21,7 +21,7 @@
                     <li class="logo"><img src="img/logo.png"> </li>
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="Login.php">Salir</a></li>
-                    <?php if($_SESSION["Numero"] == 0){?><li><a href="UserControl.php">Usuarios</a></li><?php }?>
+                    <?php if($_SESSION["permiso"] == 1){?><li><a href="UserControl.php">Usuarios</a></li><?php }?>
                 </ul>
             </nav>
             <div class="titulo">
@@ -38,6 +38,7 @@
                 <th>Contraseña</th>
                 <th>Número</th>
                 <th>Estado</th>
+                <th>Permisos</th>
                 <th></th>
                 </tr>
                 <tbody id="contenido">
@@ -49,7 +50,7 @@
         <section class="editarusuarios">
             <table class="tablaedicion">
                 <tr>
-                    <th> Configuración de Usuario    </th>
+                    <th> Configuración de Usuario   </th>
                 </tr>
                 <tr>
                     <td>
@@ -65,6 +66,11 @@
                         <option value="1">Activo</option>
                         <option value="0">Inactivo</option>
                         </select>
+                        <span class="lbl">Administrador:</span><br>
+                        <select id="estatus" name="permiso">
+                        <option value="1">Si</option>
+                        <option value="0">No</option>
+                        </select><br>
                         <input type="submit" class="botoneditar" onclick="ModificarUsuario()" id="btnEdicion" value="Guardar">
                         <input type="button" class="botoneditar" onclick="CrearUsuario()" id="btnCrear" value ="Nuevo Usuario">
                         <input type="hidden" id="numeroviejo" name="numeroviejo">

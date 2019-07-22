@@ -8,7 +8,7 @@ function MostrarUsuarios(){
             var val = eval(response);
             var html;
             for(i = 0;i<val.length;i++) {
-                html+="<tr><td>"+(i+1)+"</td><td>"+val[i][0]+"</td><td>"+val[i][1]+"</td><td>"+val[i][2]+"</td><td>"+val[i][3]+"</td><td><input type='button' onclick='ElegirUsuario("+val[i][2]+")' class='btnEditar'></td></tr>"
+                html+="<tr><td>"+(i+1)+"</td><td>"+val[i][0]+"</td><td>"+val[i][1]+"</td><td>"+val[i][2]+"</td><td>"+val[i][3]+"</td><td>"+val[i][4]+"</td><td><input type='button' onclick='ElegirUsuario("+val[i][2]+")' class='btnEditar'></td></tr>"
             }
             $("#contenido").html(html);
         }

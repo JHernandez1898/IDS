@@ -24,6 +24,14 @@ switch($funcion){
         $resultado = $lstUsuarios->ModificarUsuario($datos,$numeroviejo);
         echo $resultado;
         break;
-        
+    case "CrearUsuario":
+        $nombre = $_POST["nombre"];
+        $pass = $_POST["pass"];
+        $numero = $_POST["num"];
+        $estatus = $_POST["estatus"];
+        $datos  = array($nombre,$pass,$numero,$estatus);
+        $resultado = $lstUsuarios->CrearUsuario($datos);
+        echo $resultado;
+        break;
 }
 ?>

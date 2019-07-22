@@ -25,11 +25,7 @@ if (isset($_POST["usuario"]) && isset($_POST["pssword"]))
 		session_destroy();
 		$mensaje=0;
 		}
-        
 	} 
-    else{
-        $mensaje =-1;
-    }
 }
 else{
     $mensaje =-1;

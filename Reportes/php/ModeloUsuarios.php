@@ -28,5 +28,14 @@ class lstUsuarios{
         if($query)return 1;
         else return mysqli_error($idCone);
     }
+    public function CrearUsuario($datos){
+        require("../conect.php");
+        $idCone = conectarlocalmente();
+        $contra= MD5($datos[1]);
+        $sql= "INSERT INTO usuarios (nombre,password,numero,estatus) VALUES ('$datos[0]','$contra','$datos[2]','$datos[3]')";
+        $query = mysqli_query($idCone,$sql);
+        if($query)return 1;
+        else return mysqli_error($idCone);
+    }
 }
 ?>

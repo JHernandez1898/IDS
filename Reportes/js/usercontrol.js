@@ -30,6 +30,7 @@ function ElegirUsuario(numero){
     
 }
 function ModificarUsuario(){
+    $("#funcion").val("ModificarUsuario");
     $("#frmUsuarios").submit(function(e){
     e.preventDefault();
         $.ajax({
@@ -45,4 +46,16 @@ function ModificarUsuario(){
             }
         });
     });
+}
+function CrearUsuario(){
+    $("#funcion").val("CrearUsuario");
+    $.ajax({
+            type: "POST",
+            url: 'php/Usuarios.php',
+            data: $("#frmUsuarios").serialize(),
+    }).done(function(response){
+                if(response == 1)$("#mensaje").html("La contraseña fue cambiada correctamente");
+                else $("#mensaje").html(response);
+                MostrarUsuarios();
+});
 }

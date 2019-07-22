@@ -53,13 +53,13 @@ if (!isset($_SESSION['User']))  header('Location: Login.php');
                             <span class='label'>Cliente: </span>
                             <select class='selectpicker' data-show-subtext='true' data-live-search='true' name="Clientes"  id="Clientes">
                             </select>
-                             <script> BuscarClientes();</script>
+                            <script> BuscarClientes();</script>
                             <?php }?>
                             <span class="label">Fecha Inicial:</span>
                             <input type="date" name="fec_ini" id="fec_ini">
                             <span class="label">Fecha Final:</span>
                             <input type="date" name="fec_fin" id="fec_fin">
-                            
+                            <span id="mensaje"></span>
                             <input type="submit" onclick="BuscarPedimentos()" value="Buscar" class="btn">
                             <input type="hidden" id="cli" name="cli" value="<?php echo $_SESSION["Numero"]; ?>">
                         </td>

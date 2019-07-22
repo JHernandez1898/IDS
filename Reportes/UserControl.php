@@ -66,8 +66,9 @@
                         <option value="0">Inactivo</option>
                         </select>
                         <input type="submit" class="botoneditar" onclick="ModificarUsuario()" id="btnEdicion" value="Guardar">
+                        <input type="button" class="botoneditar" onclick="CrearUsuario()" id="btnCrear" value ="Nuevo Usuario">
                         <input type="hidden" id="numeroviejo" name="numeroviejo">
-                        <input type="hidden" value="ModificarUsuario" name="funcion">
+                        <input type="hidden" name="funcion" id="funcion">
                         </form>
                         <span id="mensaje"></span>
                     </td>

@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Gudea&display=swap');
 body{
     font-family: "Gudea",sans-serif;
-    background-image: url(../img/background-log.png);
 }
 nav {
     font-family: "Gudea",sans-serif;
     width: 100%;
     height: 40px;
-    position:fixed;
     margin-top: -8px;
     margin-left: -8px;
     background-color: darkslategray;
@@ -28,6 +26,7 @@ li{
     width: 100px;
     border-width: thin;
     float: left;
+    height: auto;
     text-align: center;
 }
 li:hover{
@@ -51,15 +50,12 @@ nav ul li a{
     text-decoration: none;
 }
 a{
-  
     text-decoration: none;
 }
-
 .logo {
      margin-right: 50%;
 }
  .imglogo {
-   
     margin-left: 20px;
     width: 35px;
     height: 35px;
@@ -67,54 +63,45 @@ a{
 .logo:hover{
     background-color: darkslategray;
 }
-.tarjeta{
-    margin-left: 33%;
-    margin-right: 33%;
-    padding-top:1%;
-    background-color:rgba(25,25,25,0.37);
-    height: 50%;
-    -webkit-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
-    border-top-color: darkslategray;
-    border-top-style: solid;
-    border-top-width: thick;
-   
+.cabecera{
+    background-image: url(../img/background-log.png);
+    width: 101.21%;
+    margin-left: -8px;
+    position: relative;
+
 }
 .Titulo{
-    margin-left: 30%;
-    font-size: 40px;
     color: white;
-    font-weight: bold;
+    background-color: rgba(25,25,25,0.37);
+    margin-top: 0;
+    height: 200px;
+    padding-left: 32%;
+    padding-top: 10%;
+    font-size: 60px;
 }
-.menregistro{
-    color: aliceblue;
-    text-align: center;
-}
-.txtbx{
-    width: 70%;
-    height: 10%;
-    border-radius: 2px;
-    border-style: hidden;
-    margin-left: 15%;
-    margin-top: 4%;
-    margin-bottom:  3%;
-    padding-left: 10px;
-}
-.btn{
-    width: 70%;
-    height: 10%;
-    margin-left: 15%;
-    background-color: darkslategray;
+.apartados{
+    margin-top: 10px;
     
-    color: white;
-    font-weight: bold;
-    border-style: hidden;
+   
 }
-.btn:hover{
-    background-color: gainsboro;
+.articulo{
+    width: 200px;
+    float: left;
+    margin-left: 8%;
+    
 }
-.alert{
-    color: darkred;
+.articulo img{
+    padding-left: 11%;
+    width: 150px;
+    height: 150px;
+}
+.articulo span{
+    font-size: 22px;
+    padding-left: 24%;
     text-align: center;
+}
+.articulo p {
+    padding-left: 2%;
+    text-align: center;
+   
 }

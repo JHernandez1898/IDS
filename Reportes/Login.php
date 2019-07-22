@@ -13,11 +13,12 @@ $_SESSION["User"] = null;
         <header>
             <nav>
                 <ul>   
-                    <li class="logo" ><a href="../index.html" ><img class="imglogo" src="img/logo.png"></a></li>
-                    <li>Reportes</li>
-                    <li>Empleados</li>
-                    <li>Visitas</li>
-                    <li>Trailers</li>
+                    <li class="logo" ><a href="../index.html" >Home</a></li>
+                    <li><a href="index.php">Reportes</a></li>
+                    <li><a href="">Empleados</a></li>
+                    <li><a href="">Visitas</a></li>
+                    <li><a href="">Trailers</a></li>
+                    <li><a href="https://aplicacionesc.mat.sat.gob.mx/SOIANET/oia_consultarap_cep.aspx">SOIANET</a></li>
                 </ul>
             </nav>
         </header>

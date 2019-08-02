@@ -1,0 +1,80 @@
+.usuarios{
+    margin-left: 17%;
+    margin-right: 3%;
+}
+.editarusuarios{
+    margin-left:45%;
+    margin-top: 2%;
+    width: 25%;
+    align-content: center;
+}
+.tablausuarios {
+    overflow:scroll;
+    font-family: "Nunito", sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 50px;
+}
+.tablausuarios  td, .tablausuarios  th {
+    border: 1px solid #ddd;
+    padding: 2px; 
+    font-size: 10px;
+}
+.tablausuarios  tr:nth-child(even){background-color: #ddd;} 
+.tablausuarios  tr:hover {background-color: #ddd;}
+.tablausuarios  th {
+    padding-top: 1px;
+    font-size: 10px;
+    padding-bottom: 1px;
+    text-align: left;
+    background-color: darkcyan;
+    color: white;
+}
+.scrolltable {
+     overflow:scroll;
+     height:300px;
+     width:100%;
+}
+.tablaedicion {
+    overflow:scroll;
+    font-family: "Nunito", sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 50px;
+}
+.tablaedicion  td, .tablaedicion  th {
+    border: 1px solid #ddd;
+    padding: 2px; 
+    font-size: 15px;
+}
+.tablaedicion  tr:nth-child(even){background-color: #ddd;} 
+.tablaedicion  tr:hover {background-color: #ddd;}
+.tablaedicion  th {
+    padding-top: 1px;
+    font-size: 10px;
+    padding-bottom: 1px;
+    text-align: left;
+    background-color: darkcyan;
+    color: white;
+}
+.lbl{
+    font-size: 15px;
+    margin-left: 30px;
+}
+.txt{
+    padding-left: 5px;
+    margin-left: 30px;
+    width: 80%;
+    border-style: hidden;
+    height: 25px;
+}
+#estatus{
+    margin-left: 30px;
+    width: 80%;
+}
+#btnEdicion{
+    margin-top: 10px;
+    margin-left: 20%;
+}

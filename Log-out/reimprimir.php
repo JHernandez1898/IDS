@@ -11,14 +11,14 @@ $query = mysqli_query($idCone,$sql);
 		 $imagen = $F['imagen'];
 ?>
 <html>
-<link href="../Recursos/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../Recursos/css/bootstrap.css" rel="stylesheet" type="text/css">
 <body>
 <div class="container">
 
         <!-- Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Gafete
+                <h1 class="page-header" style="text-align:center">Gafete
                     
                 </h1>
                
@@ -28,9 +28,13 @@ $query = mysqli_query($idCone,$sql);
 
         <!-- Feature Row -->
         <div class="row">
-            
-            <table class="table-responsive" width="242" height="100" border="1">
+            <article class="col-lg-12">
+            <table class=" table-striped" style="text-align:center" align="center" width="242" height="171" border="1">
               <tbody>
+                <tr>
+                  <td height="36">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
                 <tr>
                   <td><?php echo"<img src = '".$imagen."' width='100' height='120' >";?></td>
                   <td>Nombre:<br>
@@ -50,7 +54,7 @@ $query = mysqli_query($idCone,$sql);
                 </tr>
               </tbody>
             </table>
-            <table width="242" border="1">
+            <table align="center" width="242" border="1">
               <tbody>
                 <tr>
                   <td height="77"><center><?php echo "<img src='Recursos/barcode.php?text=".$F['serie']."'";?></center><br>
@@ -58,17 +62,18 @@ $query = mysqli_query($idCone,$sql);
                   </td>
                 </tr>
               </tbody>
-            </table>
-            <table width="200" border="1">
+            </table><br>
+
+            <table align="center" width="200" border="0">
               <tbody>
                 <tr>
-                  <td> <input type="button" onClick="window.print()" value="Imprimir"> <br>
-            <a href="index.php"><input type= button value="continuar"></a></td>
+                  <td> <input type="button" class="btn btn-sm btn-info" onClick="window.print()" value="Imprimir"> 
+            		<a href="index.php"><input class="btn btn-sm btn-success" type= "button" value="continuar"></a></td>
                 </tr>
               </tbody>
             </table>
 
-            
+            </article>
         </div>
            </div>
        
@@ -78,5 +83,4 @@ $query = mysqli_query($idCone,$sql);
 </body>
 </html>
 <p>&nbsp;</p>
-<?php }
- ?>
+<?php }?>

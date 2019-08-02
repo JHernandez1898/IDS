@@ -1,7 +1,7 @@
 <?php 
-require('conect.php');
+require('../conect.php');
 date_default_timezone_set('America/Mexico_City');
-$idCone =  conectarlocal();
+$idCone =  conectarlocalmente();
 	$nombre = $_POST['nombre'];
 	$id  = $_POST['id'];
 	$compania  =$_POST['compania'];

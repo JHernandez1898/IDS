@@ -1,4 +1,5 @@
-<?php include ('Template.php')?>
+<?php include ('Template.php');
+require("../conect.php");?>
 <!doctype html>
 <html>
 <head>
@@ -24,8 +25,8 @@
         <!-- Feature Row -->
         <div class="row">
             <article class="col-md-4 article-intro">
-                <a href="Log-out/index.php">
-                    <img class="img-rounded" src="Recursos/Imagenes/empleados.jpg" width="350" height="350" alt="">
+                <a href="registrovisitantes.php">
+                    <img class="img-rounded" src="Recursos/Fotos/primera_visita.jpg" width="350" height="200" alt="">
                 </a>
                 <h3>
                     <a href="registrovisitantes.php">Primera visita</a>
@@ -33,8 +34,8 @@
                 <p>Registre aqui a las personas que visitan por primera vez</p>
             </article>
             <article class="col-md-4 article-intro">
-                <a href="Reportes/Index.php">
-                    <img class="img-rounded" src="Recursos/Imagenes/reportes.png" width="350" height="350" alt="">
+                <a href="registrarvisita.php">
+                    <img class="img-rounded" src="Recursos/Fotos/tramites.png" width="200" height="200" alt="">
                 </a>
                 <h3>
                     <a href="registrarvisita.php">Registrar Visita</a>
@@ -43,8 +44,8 @@
             </article>
 
             <article class="col-md-4 article-intro">
-                <a href="Visitantes/index.php">
-                    <img class="img-rounded " src="Recursos/Imagenes/visitas.gif" width="350" height="350" alt="">
+                <a href="reportes.php">
+                    <img class="img-rounded " src="Recursos/Fotos/Reportes_2016.jpg" width="200" height="200" alt="">
                 </a>
                 <h3>
                     <a href="reportes.php">Reportes</a>
@@ -62,8 +63,8 @@
         <!-- Feature Row -->
         <div class="row">
             <article class="col-md-4 article-intro">
-                <a href="Log-out/index.php">
-                    <img class="img-rounded" src="Recursos/Imagenes/empleados.jpg" width="350" height="350" alt="">
+                <a href="registrarsalida.php">
+                    <img class="img-rounded" src="" width="350" height="350" alt="">
                 </a>
                 <h3>
                     <a href="registrarsalida.php">Registrar Salida</a>

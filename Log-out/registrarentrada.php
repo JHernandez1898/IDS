@@ -28,7 +28,7 @@ if($R = mysqli_fetch_array($query)){
         <!-- Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Registro de entrada
+                <h1 class="page-header">Datos de entrada
                     
                 </h1>
                
@@ -37,30 +37,44 @@ if($R = mysqli_fetch_array($query)){
         <!-- /.row -->
 
         <!-- Feature Row -->
-        <div class="row table-striped">
+        <div class="row">
            
-            <article class="col-md-4 article-intro">
-              <p>Datos de entrada</p>
-            <p>&nbsp;</p>
+            <article class="col-md-12">
+           
             <form action= "entradaexitosa.php" method="post">
-            <table width="320" border="1">
+            <table width="320" class="table table-striped  table-bordered" border="1">
               <tbody>
                 <tr>
-                  <td>Fecha: <input type="text" name = "fecha" value = "<?php echo date('F j, Y');?>" readonly></td>
-                  <td>Nombre:<input type = text name = "nombre" value="<?php echo $R["nombre"]; echo " "; echo $R["apellidos"]; ?>" readonly ></td>
+                  <td><p>Fecha: 
+                  </p>
+                    <p>
+                      <input name = "fecha" type="text" class="input-sm" value = "<?php echo date('F j, Y');?>" readonly>
+                  </p></td>
+                  <td><p>Nombre:
+                  </p>
+                    <p>
+                      <input name = "nombre" type = text class="input-sm" value="<?php echo $R["nombre"]; echo " "; echo $R["apellidos"]; ?>" readonly >
+                  </p></td>
                 </tr>
                 <tr>
-                  <td>ID: <input type = "text" name="id"  value="<?php echo $R["id"];?>"></td>
-                  <td><p>Entrada: <input type="text" name="entrada" value="<?php echo date("h:i:s A")?>" readonly  ></p></td>
+                  <td><p>ID:</p>
+                    <p>
+  <input name="id" type = "text" class="input-sm"  value="<?php echo $R["id"];?>">
+                  </p></td>
+                  <td><p>Entrada:</p>
+                    <p>
+  <input name="entrada" type="text" class="input-sm" value="<?php echo date("h:i:s A")?>" readonly  >
+                  </p></td>
                 </tr>
                 <input type="hidden" name  = "serie" value = <?php echo $R["serie"];?>>
                 <tr>
-                  <td>Notas: <textarea name="notas"> </textarea></td>
+                  <td>Notas: <br>
+			<textarea name="notas"> </textarea></td>
                   <td>&nbsp;</td>
                 </tr>
                 <tr>
                   <td>&nbsp;</td>
-                  <td><input type="submit" value="Continuar"></td>
+                  <td><input type="submit" class="btn btn-sm btn-success" value="Continuar"></td>
                 </tr>
               </tbody>
             </table>

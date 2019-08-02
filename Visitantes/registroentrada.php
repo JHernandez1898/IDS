@@ -1,6 +1,6 @@
 <?php 
-require('conect.php');
-$idCone =  conectarlocal();
+require('../conect.php');
+$idCone =  conectarlocalmente();
 	$nombre = $_POST['nombre'];
 	$id  = $_POST['id'];
 	$compania  =$_POST['compania'];

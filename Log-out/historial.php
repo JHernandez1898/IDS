@@ -23,53 +23,61 @@ $query = mysqli_query($idCone,$sql);
 </head>
 <center>
 <body>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<table width="521" border="1">
-  <tbody>
-    <tr>
-      <th style="font-family: Baskerville, 'Palatino Linotype', Palatino, 'Century Schoolbook L', 'Times New Roman', serif; font-size: 30px; color: #000000;" scope="col"><center>HISTORIAL DE ENTRADAS Y SALIDAS</center></th>
-    </tr>
-  </tbody>
-</table>
-<p>&nbsp;</p>
-<p>
-<div class="tab-content">
-<form action="#" method="post">
-  <label for="fecha">Fecha:</label>
-  <input type="date" name="fecha" id="fecha">
-  <input name="ir" type="submit" id="ir" value="Buscar">
-  </form>
-</p>
-<table width="722" border="1">
-  <tbody>
-    <tr bgcolor="#60D7E5">
-      <th bgcolor="#60D7E5" scope="col">N°</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">ID</th>
-      <th scope="col">Codigo</th>
-      <th scope="col">Entrada</th>
-      <th scope="col">Salida</th>
-      <th scope="col">Notas</th>
-    </tr>
-    <?php 
-	$c = 0;
-	while($R = mysqli_fetch_array($query)){
-	$c++;	?>
-    <tr>
-      <th bgcolor="#60D7E5" scope="row"><?php echo $c;?></th>
-      <td><?php echo $R["fecha"]; ?></td>
-      <td><?php echo $R["nombre"]; ?></td>
-      <td><?php echo $R["id"]; ?></td>
-      <td><?php echo $R["serie"]; ?></td>
-      <td><?php echo $R["entrada"]; ?></td>
-      <td><?php echo $R["salida"]; ?></td>
-      <td><?php echo $R["notas"]; ?></td>
-    </tr>
-    <?php }?>
-  </tbody>
-</table>
+<div class="container">
+	<div class="row">
+    	<h1 class="page-header" style="text-align:center">
+        	HISTORIAL DE ENTRADAS Y SALIDAS
+        </h1>
+    </div>
+    
+    <div class="row">
+    	<article class="col-lg-12">
+           <form action="#" method="post">
+          	<label for="fecha">Fecha:</label>
+          		<input type="date" name="fecha" id="fecha">
+          		<input name="ir" type="submit" id="ir" value="Buscar">
+          	</form>
+        
+            <table width="722" class="table table-striped" align="center" border="1">
+              <tbody>
+              	<thead style="background-color:#6EB1DC">
+                <tr bgcolor="#60D7E5">
+                  <th bgcolor="#60D7E5" scope="col">N°</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Codigo</th>
+                  <th scope="col">Entrada</th>
+                  <th scope="col">Salida</th>
+                  <th scope="col">Notas</th>
+                </tr>
+                </thead>
+                <?php 
+                $c = 0;
+                while($R = mysqli_fetch_array($query)){
+                $c++;	?>
+                <tr>
+                  <th bgcolor="#60D7E5" scope="row"><?php echo $c;?></th>
+                  <td><?php echo $R["fecha"]; ?></td>
+                  <td><?php echo $R["nombre"]; ?></td>
+                  <td><?php echo $R["id"]; ?></td>
+                  <td><?php echo $R["serie"]; ?></td>
+                  <td><?php echo $R["entrada"]; ?></td>
+                  <td><?php echo $R["salida"]; ?></td>
+                  <td><?php echo $R["notas"]; ?></td>
+                </tr>
+                <?php }?>
+              </tbody>
+            </table>
+        </article>
+    </div>
+    <div class="row">
+    	<article class="col-lg-12">
+        	<a href="index.php">
+            	<input type="button" class="btn btn-sm btn-warning" value="Regresar">
+            </a>
+        </article>
+    </div>
 </div>
 </body>
 </center>

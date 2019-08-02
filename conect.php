@@ -1,4 +1,5 @@
 <?php 
+date_default_timezone_set('America/Mexico_City');
 function conexion(){
   $serverName = "70.124.112.243"; //serverName\instanceName
 $connectionInfo = array( "Database"=>"Aduana", "UID"=>"masterIDS", "PWD"=>"masterIDS");
@@ -28,7 +29,11 @@ if( $conn ) {
  }
  function Mostrar_info($query,$idCone){
 	 ?>
-      <table width="834" border="1">
+<link href="Recursos/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<div class="container">
+     <div class="row">
+     <article class="col-lg-12">
+      <table class="table table-striped table-bordered" width="834" border="1">
         <tbody>
           <tr>
             <th width="22" bgcolor="#6C85F7" scope="col">N°</th>
@@ -80,11 +85,13 @@ if( $conn ) {
 			?></td>
             <td><?php echo $F["TIPO_REG"]; ?></td>
             <td><?php  echo $F["Pedimento"];?></td>
-            <td><a href="C:\Trafico\INDISEIN\DIGITALIZACION\PEDIMENTO\<?php echo $F["traReferencia"]; ?>.pdf"><?php echo $F["traReferencia"]?></a></td>
+            <td><a href="Anexos\PEDIMENTO\<?php echo $F["traReferencia"]; ?>.pdf"><?php echo $F["traReferencia"]?></a></td>
           </tr>
           <?php }?>
         </tbody>
       </table>
-	 
+	</article>
+    </div> 
+    </div>
 	 <?php
  }?>

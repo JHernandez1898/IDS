@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Gudea&display=swap');
+body{
+     font-family: "Gudea",sans-serif;
+    margin: 0px;
+}
+.menubar {
+    width: 12%;
+    height: 100%;
+    background-color: rgb(40,97,40);
+    color: white;
+    position:fixed;
+	z-index:1000;
+}
+.menubar ul{
+    list-style: none;
+    margin:0px;
+    padding: 0px;
+}
+.menubar ul li{
+    background-color: transparent;
+    font-size: 15px;
+    color: white;
+    width: 100%;
+    height: 5vh;
+    padding-top: 2.5vh;    
+}
+.menubar ul li a{
+    color: white;
+    padding-left: 2vw;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+.menubar ul li:hover{
+    background-color:rgba(52,121,52,0.77);
+    color: black;
+    width: 100%;  
+}
+.headliner{
+    height: 5vh;
+    float: left;
+    margin-left: 12vw;
+    width: 88vw;
+    text-align: center;
+    color: white;
+    background-color: rgb(52 ,121,46);
+}
+h1{
+    margin: 2px 0px 0px 0px;
+    font-size: 18px;
+}
+@media only screen and (width: 768px) and (height: 580px){
+    nav {width: 18vw;}
+
+    .headliner{
+        margin-left: 18vw;
+        text-align: center;
+        width: 80%;
+    }
+}

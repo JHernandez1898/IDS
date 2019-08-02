@@ -4,21 +4,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Control IDS</title>
+    <title>Trailers IDS</title>
     <link href="css/estilo.css" rel="stylesheet">
 </head>
 <body>
    <header>
-       <nav>
+       <nav class="menubar">
             <ul>   
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="Reportes/index.php">Diario</a></li>
-                <li><a href="">Entradas</a></li>
-                <li><a href="">Salidas</a></li>
-                <li><a href="">Almacen</a></li>
-                <li><a href="">Reportes</a></li>
-                </ul>
+                <li><a href="../index.html"><img class="menuico" src="img/regresar.png"></a></li>
+                <li><a href="index.php">Home</a></li>
+                 <li><a href="entrada.php" >Log In</a></li>
+            </ul>
        </nav>
     </header>
-    </body>
+    <section class="headliner">
+    <h1>Trailer Management</h1>
+    </section>
     
+</body>
+</html>

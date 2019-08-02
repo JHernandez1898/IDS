@@ -13,6 +13,30 @@ function MostrarDrivers(){
             $("#driverid").html(html);
     });
 }
+function MostrarRegistroDrivers(){
+     $.ajax({
+            type: 'POST',
+            async:false,
+            url: 'php/ControladorTrailer.php',
+            data: "funcion=Mostrar",
+            success: function(response){
+                
+                var html="<td><form id='frmDriver'><span>Driver id: </span><input type='text' name='driverid' id='driverid'  class='txt'></br><span>Company: </span><input type='text' name='drivercompany' id='drivercompany' class='txt'><input type='hidden' name='funcion' value='RegistrarDriver'><input type='submit' onclick='RegistrarDriver()' class='registrar' value='Save'>  </form> </td>";
+                $("#registrardriver").html(html);
+            }
+     });
+}
+function RegistrarTrailer(){
+        $.ajax({
+            type: 'POST',
+            async:false,
+            url: 'php/ControladorDriver.php',
+            data: $("#frmDriver").serialize(),
+            success: function(response){
+            }
+     });    
+ }
+
 
 function RegistrarTrailer(){
         $.ajax({
@@ -61,7 +85,7 @@ function MostrarTrailer(){
             data: "funcion=MostrarTrailer&idtra="+seleccionado,
             success: function(response){
                 var val =  eval(response);
-                var html="<td><form id='frmTrailer'><span>Trailer Number: </span> "+val[0][0]+"<br><br><span>Company: </span>"+val[0][1]+"</br> </td>";
+                var html="<td><strong>Company: </strong>"+val[0][1]+"</br> </td>";
                 $("#campos").html(html);
             }
      });

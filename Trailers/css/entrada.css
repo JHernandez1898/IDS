@@ -6,13 +6,15 @@
     width: 75vw;
     float: left;
 }
-.datostrailer{
+.tablaform{
     border-collapse: collapse;
     width: 50%;
-    border-radius: 50px;
+    margin-bottom: 2vh;
     float: left;
+   
+   
 }
-.datostrailer th{
+.tablaform th{
     color: white;
     background-color:  rgb(52,121,46);
     font-size: 16px;
@@ -20,13 +22,13 @@
     text-align: left;
     font-family: "Gudea",sans-serif;
 }
-.datostrailer th span{
+.tablaform th span{
     margin-left: 20px;
 }
-.datostrailer th img {
+.tablaform th img {
     margin-left: 1vw;
 }
-.datostrailer  td{
+.tablaform  td{
     border: 1px solid #ddd;
     text-align: left;
     font-family: "Gudea",sans-serif;

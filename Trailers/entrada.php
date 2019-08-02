@@ -15,7 +15,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
     <script src="js/entrada.js"></script>
-
 </head>
 <body>
    <header>
@@ -32,7 +31,9 @@
     </section>
     <section class="formulario">
         <article class="articulo">
-        <table class="datostrailer">
+            
+        <!-- Trailer-->
+        <table class="tablaform">
             <tr>
                 <th><img src="img/uno.png"><span>Trailer Information</span></th>
             </tr>
@@ -49,26 +50,28 @@
             </tr>
         </table>
         </article>
+        <!--Drivers-->
         <article class="articulo">
-        <table class="datostrailer">
+        <table class="tablaform">
             <tr>
                 <th><img src="img/dos.png"><span>Driver Information</span></th>
             </tr>
             <tr>
                 <td>
                     <span>Driver ID: </span>
-                    <select class='selectpicker' data-show-subtext='true' data-live-search='true' id="driverid" name="driverid"  onchange="MostrarDriver()" class="select">
+                    <select class='selectpicker' data-show-subtext='true' data-live-search='true' id="driverid" name="driverid" class="select">
                     </select>
                     <script></script>
-                    <button onclick="MostrarRegistroTrailer()" class="btnRegistro">New Entry</button>
+                    <button onclick="MostrarRegistroDrivers()" class="btnRegistro">New Entry</button>
                 </td>
             </tr>
-            <tr id="campos">
+            <tr id="registrardriver">
             </tr>
         </table>
-              </article>
-            <article class="articulo">
-        <table class="datostrailer">
+        </article>
+        <!-- Truck-->
+        <article class="articulo">
+        <table class="tablaform">
             <tr>
                 <th><img src="img/tres.png"><span>Truck Information</span></th>
             </tr>
@@ -85,8 +88,9 @@
             </tr>
         </table>
         </article>
+        <!--Consignación-->
          <article class="articulo">
-        <table class="datostrailer">
+        <table class="tablaform">
             <tr>
                 <th><img src="img/4.png"><span>Consignment Information</span></th>
             </tr>

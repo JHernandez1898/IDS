@@ -22,7 +22,7 @@
        </nav>
     </header>
     <section class="headliner">
-    <h1>Trailer Management</h1>
+    <h1>Reports</h1>
     </section>
     
 </body>

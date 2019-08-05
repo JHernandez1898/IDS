@@ -22,7 +22,11 @@
             <ul>   
                 <li><a href="../index.html"><img class="menuico" src="img/regresar.png"></a></li>
                 <li><a href="index.php">Home</a></li>
-                 <li><a href="entrada.php">Log In</a></li>
+                <li><a href="entrada.php" >Log In</a></li>
+                <li><a href="storage.php" >Storage</a></li>
+                <li><a href="yard.php" >Yard</a></li>
+                <li><a href="dock.php" >Dock</a></li>
+                <li><a href="reportes.php" >Reports</a></li>
             </ul>
        </nav>
     </header>
@@ -30,26 +34,26 @@
     <h1 class="titulo">Register Entry</h1>
     </section>
     <section class="formulario">
+         <!-- Truck-->
         <article class="articulo">
-            
-        <!-- Trailer-->
         <table class="tablaform">
             <tr>
-                <th><img src="img/uno.png"><span>Trailer Information</span></th>
+                <th><img src="img/uno.png"><span>Truck Information</span></th>
             </tr>
             <tr>
                 <td>
-                    <span>Trailer Number: </span>
-                    <select class='selectpicker' data-show-subtext='true' data-live-search='true' id="tnumber" name="tnumber"  onchange="MostrarTrailer()" class="select">
+                    <span>Truck number: </span>
+                    <select class='selectpicker' data-show-subtext='true' data-live-search='true' id="trucknumber" name="trucknumber"  class="select" onchange="MostrarTruck()">
                     </select>
-                    <script>MostrarTrailers()</script>
-                    <button onclick="MostrarRegistroTrailer()" class="btnRegistro">New Entry</button>
+                    <script>MostrarTrucks()</script>
+                    <button onclick="MostrarRegistroTrucks()" class="btnRegistro">New</button>
                 </td>
             </tr>
-            <tr id="campos">
+            <tr id="registrotruck">
             </tr>
         </table>
         </article>
+       
         <!--Drivers-->
         <article class="articulo">
         <table class="tablaform">
@@ -58,30 +62,30 @@
             </tr>
             <tr>
                 <td>
-                    <span>Driver ID: </span>
-                    <select class='selectpicker' data-show-subtext='true' data-live-search='true' id="driverid" name="driverid" class="select">
+                    <span>Driver ID: </span><br>
+                    <select class='selectpicker' data-show-subtext='true' data-live-search='true' id="driverid" name="driverid" class="select" onchange="MostrarDriver()">
                     </select>
-                    <script></script>
-                    <button onclick="MostrarRegistroDrivers()" class="btnRegistro">New Entry</button>
+                    <script>MostrarDrivers()</script>
+                    <button onclick="MostrarRegistroDrivers()" class="btnRegistro">New</button>
                 </td>
             </tr>
             <tr id="registrardriver">
             </tr>
         </table>
         </article>
-        <!-- Truck-->
+        <!-- Trailer-->
         <article class="articulo">
         <table class="tablaform">
             <tr>
-                <th><img src="img/tres.png"><span>Truck Information</span></th>
+                <th><img src="img/tres.png"><span>Trailer Information</span></th>
             </tr>
             <tr>
                 <td>
-                    <span>Driver ID: </span>
-                    <select class='selectpicker' data-show-subtext='true' data-live-search='true' id="driverid" name="driverid"  onchange="MostrarDriver()" class="select">
+                    <span>Trailer Number: </span>
+                    <select class='selectpicker' data-show-subtext='true' data-live-search='true' id="tnumber" name="tnumber"  onchange="MostrarTrailer()" class="select">
                     </select>
-                    <script></script>
-                    <button onclick="MostrarRegistroTrailer()" class="btnRegistro">New Entry</button>
+                    <script>MostrarTrailers()</script>
+                    <button onclick="MostrarRegistroTrailer()" class="btnRegistro">New</button>
                 </td>
             </tr>
             <tr id="campos">
@@ -96,14 +100,42 @@
             </tr>
             <tr>
                 <td>
-                    <span>Consigna ID: </span>
-                    <select class='selectpicker' data-show-subtext='true' data-live-search='true' id="driverid" name="driverid"  onchange="MostrarDriver()" class="select">
+                    <span>Consignment: </span>
+                    <select class='selectpicker' data-show-subtext='true' data-live-search='true' id="consigna" name="consigna"  class="select">
                     </select>
-                    <script></script>
-                    <button onclick="MostrarRegistroTrailer()" class="btnRegistro">New Entry</button>
+                    <script>MostrarConsigna()</script>
+                    <button onclick="MostrarRegistroConsigna()" class="btnRegistro">New</button>
                 </td>
             </tr>
-            <tr id="campos">
+            <tr id="registrarconsigna">
+            </tr>
+        </table>
+        </article>
+        <!--General-->
+         <article class="articulo">
+        <table class="tablageneral">
+            <tr>
+                <th><img src="img/cinco.png"><span>General</span></th>
+            </tr>
+            <tr>
+                <td>
+                    <span class="lbl">Seal Number: </span>
+                    <input type="text" class="input" id="sealnumber" name="sealnumber">
+                    <span class="lbl">LD/MT: </span>
+                    <select class='selectpicker' name = "LDMT" id = "LDMT" data-show-subtext = 'true' data-live-search='true'>
+                    <option value="MT">MT</option>
+                    <option value="LD">LD</option>
+                    </select><br>
+                    <span class="lbl">Type: </span>
+                    <select class='selectpicker' name="tipo" id = "tipo" data-show-subtext='true' data-live-search='true'>
+                    <option value="P/U">P/U</option>
+                    <option value="DELIVERY">DELIVERY</option>
+                    <option value="DROP">DROP</option>
+                    </select>
+                    <span class="lbl">Hour: </span>
+                    <input type="time" class="input" name="hora" id="hora">
+                    <button onclick="RegistrarEntrada()" class="btnRegistro">Register Entry</button>
+                </td>
             </tr>
         </table>
         </article>

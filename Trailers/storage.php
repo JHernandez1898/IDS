@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trailers IDS</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link href="css/estilo.css" rel="stylesheet">
+    <link href ="css/storage.css" rel="stylesheet">
+    <script src="js/storage.js" type="text/javascript"></script>
 </head>
 <body>
    <header>
@@ -22,7 +25,27 @@
        </nav>
     </header>
     <section class="headliner">
-    <h1>Trailer Management</h1>
+    <h1>Storage Management</h1>
+    </section>
+    <section class="entries">
+    <table class="table">
+        <tr>
+        <th>#</th>
+        <th>Trailer Company</th>
+        <th>Trailer Number</th>
+        <th>Lic. Plate Number</th>
+        <th>State</th>
+        <th>Placement</th>
+        <th>Dock/Space</th>
+        <th></th>
+        </tr>
+        <tbody id="info">
+        
+        </tbody>
+            
+        
+    </table>
+    
     </section>
     
 </body>

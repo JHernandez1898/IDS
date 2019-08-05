@@ -1,0 +1,32 @@
+.entries{
+    margin-left: 12%;
+}
+.table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 2vh;
+    float: left;
+}
+.table th{
+    color: white;
+    background-color:  rgb(52,121,46);
+    font-size: 16px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-family: "Gudea",sans-serif;
+}
+.table td{
+    border: 1px solid #ddd;
+    text-align: left;
+    font-family: "Gudea",sans-serif;
+    
+}
+.input{
+    width: 10vw;
+}
+@media only screen and (max-width: 1024px) and (max-height: 768px){
+    .table th{
+   
+    font-size: 10px;
+    }
+}

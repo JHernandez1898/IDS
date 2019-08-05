@@ -1,28 +1,28 @@
 <?php
 require("conect.php");
-class ListaDrivers{
+class ListaTrucks{
 
-    function AgregarDriver($datos){
+    function AgregarTruck($datos){
         $conexion = new ConexionBD();
         $idCone = $conexion -> Conectar();
-        $sql = "INSERT INTO drivers  VALUES ('$datos[0]','$datos[1]', '$datos[2]','$datos[3]')";
+        $sql = "INSERT INTO Trucks(tnumber, tcompany, identificacion) VALUES ('$datos[0]','$datos[1]', '$datos[2]')";
         $query = mysqli_query($idCone,$sql);
         if($query)echo 1;
-        else throw new  Exception(mysqli_error($idCone));
+        else throw new Exception(mysqli_error($idCone));
     }
-    function MostrarDrivers(){
+    function MostrarTrucks(){
         $conexion = new ConexionBD();
         $idCone = $conexion ->Conectar();
-        $sql = "SELECT IDDriver FROM Drivers";
+        $sql = "SELECT IDTruck,tnumber FROM Trucks";
         $query = mysqli_query($idCone,$sql);
         $resultado = array();
         while($F  = mysqli_fetch_array($query))$resultado[]  = $F;
         return($resultado);   
-    }    
-    function MostrarDriver($id){
+    }
+    function MostrarTruck($id){
         $conexion = new ConexionBD();
         $idCone = $conexion ->Conectar();
-        $sql = "SELECT concat(name,' ', lastname) as nombrecompleto from drivers Where IDDriver  =".$id;
+        $sql = "SELECT tcompany FROM Trucks Where IDTruck  =".$id;
         $query = mysqli_query($idCone,$sql);
         $resultado = array();
         while($F  = mysqli_fetch_array($query))$resultado[]  = $F;

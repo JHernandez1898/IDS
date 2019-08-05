@@ -7,7 +7,8 @@ class ListaTrailers{
         $idCone = $conexion -> Conectar();
         $sql = "INSERT INTO trailers(tnumber, company, identificacion) VALUES ('$datos[0]','$datos[1]', '$datos[2]')";
         $query = mysqli_query($idCone,$sql);
-        if($query)echo 1;else echo 2;
+        if($query)echo 1;
+        else throw new Exception(mysqli_error($idCone));
     }
     function MostrarTrailers(){
         $conexion = new ConexionBD();

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trailers IDS</title>
     <link href="css/estilo.css" rel="stylesheet">
+    <link href="css/yard.css" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/yard.js"></script>
 </head>
 <body>
    <header>
@@ -22,8 +25,25 @@
        </nav>
     </header>
     <section class="headliner">
-    <h1>Trailer Management</h1>
+    <h1>Yard Management</h1>
     </section>
-    
+    <section>
+        <article class="yardstorage">
+            <table class="table">
+            <tr>
+                <th>Space</th>   
+                <th>Trailer Company</th>
+                <th>Trailer Number</th>
+                <th>Plate Number</th>
+                <th>Entry</th>
+                <th>Days on yard</th>
+                <th></th>
+            </tr>
+            <tbody id="campos">
+            </tbody>
+            </table>
+        </article>
+        <script>MostrarEstadiasYard();</script>
+    </section>
 </body>
 </html>

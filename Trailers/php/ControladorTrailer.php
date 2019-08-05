@@ -4,13 +4,16 @@ $funcion =  $_POST["funcion"];
 $lstTrailers  =  new ListaTrailers();
 switch($funcion){
     case "RegistrarTrailer":
-        if(isset($_POST["tranumber"]))$numero = $_POST["tranumber"];else $numero = -1;
-        if(isset($_POST["tracompania"]))$compania = $_POST["tracompania"];else $compania = -1;
+        try{
+        $numero = $_POST["tranumber"];
+        $compania = $_POST["tracompania"];
         $ruta = "img/trailers/".$numero.".jpg";
-        if($numero !=-1 or $compania != -1){
-            $datos =  array($numero,$compania,$ruta);
-            $respuesta = $lstTrailers -> AgregarTrailer($datos);
-        }else echo "Debe de agregar un número o compañia";
+        $datos =  array($numero,$compania,$ruta);
+        $respuesta = $lstTrailers -> AgregarTrailer($datos);
+        }
+        catch(Exception $e){
+            echo "error: ".$e->getMessage();
+        }
         
     break;
     case "MostrarTrailers":

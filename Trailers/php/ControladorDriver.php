@@ -1,27 +1,27 @@
 <?php 
-require("ModeloTrailer.php");
+require("ModeloDriver.php");
 $funcion =  $_POST["funcion"];
-$lstTrailers  =  new ListaTrailers();
+$lstDrivers  =  new ListaDrivers();
 switch($funcion){
-    case "RegistrarTrailer":
-        if(isset($_POST["driverid"]))$driverid = $_POST["driverid"];else $driverid = -1;
-        if(isset($_POST["drivercompany"]))$drivercompany = $_POST["drivercompany"];else $drivercompany = -1;
-        $ruta = "img/trailers/".$driverid".jpg";
-        if($driverid !=-1 or $drivercompany != -1){
-            $datos =  array($numero,$compania,$ruta);
-            $respuesta = $lstTrailers -> AgregarTrailer($datos);
-        }else echo "Debe de agregar un número o compañia";
-        
+    case "RegistrarDriver":
+        try{
+            $driverid = $_POST["driverid"];
+            $drivername = $_POST["drivername"];
+            $driverlastname =$_POST["driverlastname"];
+            $ruta = "img/trailers/".$driverid.".jpg";
+            $datos =  array($driverid,$drivername,$driverlastname,$ruta);
+            $respuesta = $lstDrivers -> AgregarDriver($datos);
+        }
+        catch(Exception $e){ echo "Debe de agregar un número o compañia";   }                                   
     break;
-    case "MostrarTrailers":
-        $resultado = $lstTrailers -> MostrarTrailers();
+    case "MostrarDrivers":
+        $resultado = $lstDrivers -> MostrarDrivers();
         echo json_encode($resultado);
     break;
-    case "MostrarTrailer":
-        $id = $_POST["idtra"];
-        $resultado = $lstTrailers->MostrarTrailer($id);
+    case "MostrarDriver":
+        $id = $_POST["driverid"];
+        $resultado = $lstDrivers->MostrarDriver($id);
         echo json_encode($resultado);
         break;
 }
-
 ?>

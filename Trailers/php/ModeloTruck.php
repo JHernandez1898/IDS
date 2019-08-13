@@ -22,7 +22,7 @@ class ListaTrucks{
     function MostrarTruck($id){
         $conexion = new ConexionBD();
         $idCone = $conexion ->Conectar();
-        $sql = "SELECT tcompany FROM Trucks Where IDTruck  =".$id;
+        $sql = "SELECT tcompany FROM Trucks Where TNumber  =".$id;
         $query = mysqli_query($idCone,$sql);
         $resultado = array();
         while($F  = mysqli_fetch_array($query))$resultado[]  = $F;

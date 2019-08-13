@@ -22,7 +22,8 @@ class ListaTrailers{
     function MostrarTrailer($id){
         $conexion = new ConexionBD();
         $idCone = $conexion ->Conectar();
-        $sql = "SELECT tnumber,company FROM Trailers Where IDTrailer  =".$id;
+        
+        $sql = "SELECT tnumber,company FROM Trailers Where TNumber = '".$id."'";
         $query = mysqli_query($idCone,$sql);
         $resultado = array();
         while($F  = mysqli_fetch_array($query))$resultado[]  = $F;

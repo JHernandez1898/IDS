@@ -5,9 +5,9 @@ $lstTrucks  =  new ListaTrucks();
 switch($funcion){
     case "RegistrarTruck":
         try{
-            $trucknumber = $_POST["trucknmb"];
+            $trucknumber = $_POST["trucknumber"];
             $truckcompany = $_POST["truckcompany"];
-            $ruta = "img/trailers/".$truckid.".jpg";
+            $ruta = "img/trailers/".$trucknumber.".jpg";
             $datos =  array($trucknumber,$truckcompany,$ruta);
             $respuesta = $lstTrucks -> AgregarTruck($datos);
         }

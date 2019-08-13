@@ -3,14 +3,15 @@
     height: 10vh;
     margin-top: 5vh;
     margin-left: 18vw;
-    width: 75vw;
+    width: 78vw;
     float: left;
 }
 .tablaform{
     border-collapse: collapse;
-    width: 50%;
-    margin-bottom: 2vh;
+    width: 25%;
+    margin-bottom: 5vh;
     float: left;
+   
 }
 .tablaform th{
     color: white;
@@ -73,7 +74,6 @@ h1{
 }
 .btnRegistro{
     width: auto;
-    margin-left: 2vw;
     border-radius: 10px;
     border-style: hidden;
     height: auto;
@@ -101,7 +101,6 @@ h1{
     margin-top: -15vh;
 }
 .txt{
-    margin-bottom: 4vh;
     height: 4vh;
     border-radius: 5px;
 }
@@ -109,7 +108,7 @@ h1{
     width: 20vw;
 }
 #compania{
-    width: 20vw;
+    width: 10vw;
 }
 #foto{
     margin-left: 50vw;
@@ -124,11 +123,40 @@ h1{
     background-color: rgb(114,140,114);
     color: white;
 }
-.input{
-    margin-bottom: 5vh;
+
+.control{
+    margin-right: 8vw;
+    
 }
-.lbl{
-    margin-left: 10vw;
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: gainsboro;
+    background-image: url(../img/a%C3%B1adirimagen.png);
+    padding: 8px 20px;
+    margin-left: 4vw;
+    width: 128px;
+    height: 128px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.btnCompleto{
+    margin-left: 18vw;
+    margin-top: 60vh;
 }
 @media only screen and (max-width: 1024px) and (max-height: 768px){
 
@@ -137,12 +165,22 @@ h1{
         width: 80%;
     }
     .btnRegistro{
-        width: 5vw;
+        width: auto;
         height: 2vh;
         font-size: 10px;
         margin-left: 1vw;
     }
     .lbl{
         margin-left: 2vw;
+    }
+    .tablaform {
+        width: 50%;
+    }
+    .tablageneral{
+        width: 100%;
+    }
+    .control{
+    margin-right: 0.5vw;
+        width: 60px;
     }
 }

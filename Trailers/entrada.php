@@ -160,7 +160,7 @@
                     <input type="file" name="myfile" />
                     </div>
                     <div class="upload-btn-wrapper">
-                    <button class="btn"></button>
+                    <button class="btn" capture="camera"></button>
                     <input type="file" name="myfile" />
                     </div>
                 </td>

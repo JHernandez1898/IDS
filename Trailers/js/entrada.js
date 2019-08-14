@@ -1,3 +1,4 @@
+
 function RegistrarEntrada(){
     var trailernumber = $("#tnumber").val();
     var driverid  = $("#driverid").val();
@@ -44,6 +45,8 @@ function getID(tabla,dato){
      });
     return id;
 }
+
+  
 
 function MostrarConsigna(){
         $.ajax({

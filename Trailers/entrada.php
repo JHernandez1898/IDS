@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -9,6 +9,7 @@
     <link href="css/entrada.css" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="js/entrada.js"></script>
+
 </head>
 <body>
    <header>
@@ -144,24 +145,24 @@
                 <td>
                     
                     <div class="upload-btn-wrapper">
-                    <button class="btn"></button>
-                    <input type="file" name="myfile" />
+                    <button class="btn"><img id='img1' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
+                    <input type="file" name="file1" id="file1"  />
                     </div>
                     <div class="upload-btn-wrapper">
-                    <button class="btn"></button>
-                    <input type="file" name="myfile" />
+                    <button class="btn"><img id='img2' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
+                    <input type="file"  name="file2" id="file2" capture="camera" />
                     </div>
                     <div class="upload-btn-wrapper">
-                    <button class="btn"></button>
-                    <input type="file" name="myfile" />
+                    <button class="btn"><img id='img3' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
+                    <input type="file"  name="file3" id="file3"  capture="camera" />
                     </div>
                     <div class="upload-btn-wrapper">
-                    <button class="btn"></button>
-                    <input type="file" name="myfile" />
+                    <button class="btn"><img id='img4' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
+                    <input type="file"  name="file4" id="file4"  capture="camera"/>
                     </div>
                     <div class="upload-btn-wrapper">
-                    <button class="btn" capture="camera"></button>
-                    <input type="file" name="myfile" />
+                    <button class="btn"><img id='img5' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
+                    <input type="file"  name="file5" id="file5"   capture="camera" />
                     </div>
                 </td>
             </tr>
@@ -171,6 +172,45 @@
     </section>
      
      <button onclick="RegistrarEntrada()" class="btnCompleto">Register Entry</button>
-    
+       <script>
+           
+
+document.getElementById("file1").onchange = function(e) {
+  let reader = new FileReader();
+  reader.readAsDataURL(e.target.files[0]);
+  reader.onload = function(){
+      $('#img1').attr("src",reader.result);
+  };
+}
+
+document.getElementById("file2").onchange = function(e) {
+  let reader = new FileReader();
+  reader.readAsDataURL(e.target.files[0]);
+  reader.onload = function(){
+      $('#img2').attr("src",reader.result);
+  };
+}
+document.getElementById("file3").onchange = function(e) {
+  let reader = new FileReader();
+  reader.readAsDataURL(e.target.files[0]);
+  reader.onload = function(){
+      $('#img3').attr("src",reader.result);
+  };
+}
+document.getElementById("file4").onchange = function(e) {
+  let reader = new FileReader();
+  reader.readAsDataURL(e.target.files[0]);
+  reader.onload = function(){
+      $('#img4').attr("src",reader.result);
+  };
+}
+document.getElementById("file5").onchange = function(e) {
+  let reader = new FileReader();
+  reader.readAsDataURL(e.target.files[0]);
+  reader.onload = function(){
+      $('#img5').attr("src",reader.result);
+  };
+}
+</script>
 </body>
 </html>

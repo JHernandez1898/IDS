@@ -5,7 +5,7 @@ class ListaDrivers{
     function AgregarDriver($datos){
         $conexion = new ConexionBD();
         $idCone = $conexion -> Conectar();
-        $sql = "INSERT INTO drivers  VALUES ('$datos[0]','$datos[1]', '$datos[2]','$datos[3]')";
+        $sql = "INSERT INTO drivers  VALUES ('$datos[0]','$datos[1]', '$datos[2]')";
         $query = mysqli_query($idCone,$sql);
         if($query)echo 1;
         else throw new  Exception(mysqli_error($idCone));

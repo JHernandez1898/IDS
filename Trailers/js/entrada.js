@@ -1,69 +1,8 @@
 
-function RegistrarEntrada(){
-    var trailernumber = $("#tnumber").val();
-    var driverid  = $("#driverid").val();
-    var trucknumber = $("#trucknumber").val();
-    var consigna = $("#consigna").val();
-    var sealnumber = $("#sealnumber").val();
-    var LDMT = $("#LDMT").val();
-    var tipo = $("#tipo").val();
-    var hora = $("#hora").val();
-    var form = new FormData();
-    form.append("tnumber",trailernumber);
-    form.append("driverid",driverid);
-    form.append("trucknumber",trucknumber);
-    form.append("consigna",consigna);
-    form.append("sealnumber",sealnumber);
-    form.append("LDMT",LDMT);
-    form.append("tipo",tipo);
-    form.append("hora",hora);
-    form.append("funcion","RegistrarEntrada");
-    
-    $.ajax({
-        url: 'php/ControladorEntrada.php',    
-        type: 'POST',
-        data: form,
-        processData: false,  // tell jQuery not to process the data
-        contentType: false,
-        success: function(response){
-                location.href = "storage.php";
-            }
-     });
-}   
 
-function getID(tabla,dato){
-    
-    var id = 0;
-    $.ajax({
-        url: 'php/ControladorEntrada.php',    
-        type: 'POST',
-        async:false,
-        data: "funcion=getid&dato="+dato+"tabla="+tabla,
-        success: function(response){
-                id = response;
-        }
-     });
-    return id;
-}
 
-  
 
-function MostrarConsigna(){
-        $.ajax({
-        type:"POST",
-        async:false,
-        url: "php/ControladorConsigna.php",
-        data: "funcion=MostrarConsigna"
-    }).done(function(response){
-            var val = eval(response);
-            var html = "";
-            for(i = 0;i<val.length;i++){
-                html += "<option value = "+val[i][1]+">";
-            }
-            $("#consignas").html(html);
-            
-    });
-}
+
 function MostrarRegistroTrucks(){
      $.ajax({
             type: 'POST',
@@ -72,12 +11,11 @@ function MostrarRegistroTrucks(){
             data: "funcion=Mostrar",
             success: function(response){
                 
-                var html="<td><span>Truck Number: </span><span>Company: </span><input type='text' name='truckcompany' id='truckcompany'  class='txt'><input type='button' onclick='RegistrarTruck()' class='registrar' value='Save'></td>";
+                var html="<td></span><span>Company: </span><input type='text' name='truckcompany' id='truckcompany'  class='txt'><input type='button' onclick='RegistrarTruck()' class='registrar' value='Save'></td>";
                 $("#registrotruck").html(html);
             }
      });
 }
-
 function RegistrarTruck(){
     var frm = new FormData();
     var trucknumber =  $("#trucknumber").val();
@@ -92,7 +30,7 @@ function RegistrarTruck(){
             processData: false,  // tell jQuery not to process the data
             contentType: false,
             success: function(response){
-                if(response==1){alert("Succesful")}
+                if(response==1){alert("Successful registration, continue with the registration")}
                 MostrarTrucks();
             }
      });    
@@ -108,7 +46,7 @@ function MostrarTrucks(){
             var val = eval(response);
             var html = "";
             for(i = 0;i<val.length;i++){
-                html += "<option value='"+val[i][1]+"'>";
+                html += "<option value='"+val[i][0]+"'>";
             }
             $("#trucks").html(html);
     });
@@ -157,7 +95,8 @@ function RegistrarDriver(){
             processData: false,  // tell jQuery not to process the data
             contentType: false,
             success: function(response){
-                if(response==1){alert("Succesful")}
+                alert(response);
+                if(response==1){alert("Successful registration, continue with the registration")}
                 MostrarDrivers();
             }
      });    
@@ -207,7 +146,7 @@ function RegistrarTrailer(){
             processData: false,  // tell jQuery not to process the data
             contentType: false,
             success: function(response){
-                if(response==1){alert("Succesful")}
+                if(response==1){alert("Successful registration, continue with the registration")}
                 MostrarTrailers();
             }
      });       
@@ -222,7 +161,7 @@ function MostrarTrailers(){
             var val = eval(response);
             var html = "";
             for(i = 0;i<val.length;i++){
-                html += "<option value = "+val[i][1]+">";
+                html += "<option value = "+val[i][0]+">";
             }
             $("#trailers").html(html);
     });
@@ -249,7 +188,7 @@ function MostrarTrailer(){
             data: "funcion=MostrarTrailer&idtra="+seleccionado,
             success: function(response){
                 var val =  eval(response);
-                var html="<td><strong>Company: </strong>"+val[0][1]+"</br> </td>";
+                var html="<td><strong>Company: </strong>"+val[0][0]+"</br> </td>";
                 $("#campos").html(html);
             }
      });

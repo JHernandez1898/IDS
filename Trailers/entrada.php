@@ -14,7 +14,9 @@
 <body>
    <header>
        <nav class="menubar">
+           <img class="menuicon" src="img/menu.png">
             <ul>   
+               
                 <li><a href="../index.html"><img class="menuico" src="img/regresar.png"></a></li>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="entrada.php" >Log In</a></li>
@@ -104,7 +106,7 @@
                     <span>Consigment: </span><br>
                     <input type="text" list ="consignas" id="consigna" name="consigna"  class="select">
                     <script>MostrarConsigna()</script>
-                    <button onclick="MostrarRegistroConsigna()" class="btnRegistro">Save</button>
+
                 </td>
             </tr>
             <tr id="registrarconsigna">
@@ -132,6 +134,7 @@
                     <option value="DELIVERY">DELIVERY</option>
                     <option value="DROP">DROP</option>
                     </select>
+                     <button onclick="RegistrarEntrada()" class="btnCompleto">Register Entry</button>
                 </td>
             </tr>
         </table>
@@ -171,7 +174,7 @@
       
     </section>
      
-     <button onclick="RegistrarEntrada()" class="btnCompleto">Register Entry</button>
+    
        <script>
            
 
@@ -211,6 +214,45 @@ document.getElementById("file5").onchange = function(e) {
       $('#img5').attr("src",reader.result);
   };
 }
+function RegistrarEntrada(){
+    var trailernumber = $("#tnumber").val();
+    var driverid  = $("#driverid").val();
+    var trucknumber = $("#trucknumber").val();
+    var consigna = $("#consigna").val();
+    var sealnumber = $("#sealnumber").val();
+    var LDMT = $("#LDMT").val();
+    var tipo = $("#tipo").val();
+    var hora = $("#hora").val();
+    var form = new FormData();
+    form.append("tnumber",trailernumber);
+    form.append("driverid",driverid);
+    form.append("trucknumber",trucknumber);
+    form.append("consigna",consigna);
+    form.append("sealnumber",sealnumber);
+    form.append("LDMT",LDMT);
+    form.append("tipo",tipo);
+    form.append("hora",hora);
+    form.append("img1",$("#file1")[0].files[0]);
+    form.append("img2",$("#file2")[0].files[0]);
+    form.append("img3",$("#file3")[0].files[0]);
+    form.append("img4",$("#file4")[0].files[0]);
+    form.append("img5",$("#file5")[0].files[0]);
+    form.append("funcion","RegistrarEntrada");
+    
+    $.ajax({
+        url: 'php/ControladorEntrada.php',    
+        type: 'POST',
+        data: form,
+        processData: false,  // tell jQuery not to process the data
+        contentType: false,
+        success: function(response){
+                if(response == "11"){
+                    alert("Succesful");
+                    location.href=  "storage.php";
+                }
+            }
+     });
+}   
 </script>
 </body>
 </html>

@@ -5,7 +5,7 @@ class ListaTrucks{
     function AgregarTruck($datos){
         $conexion = new ConexionBD();
         $idCone = $conexion -> Conectar();
-        $sql = "INSERT INTO Trucks(tnumber, tcompany, identificacion) VALUES ('$datos[0]','$datos[1]', '$datos[2]')";
+        $sql = "INSERT INTO Trucks(IDTKNumber, tcompany) VALUES ('$datos[0]','$datos[1]')";
         $query = mysqli_query($idCone,$sql);
         if($query)echo 1;
         else throw new Exception(mysqli_error($idCone));
@@ -13,7 +13,7 @@ class ListaTrucks{
     function MostrarTrucks(){
         $conexion = new ConexionBD();
         $idCone = $conexion ->Conectar();
-        $sql = "SELECT IDTruck,tnumber FROM Trucks";
+        $sql = "SELECT IDTKNumber FROM Trucks";
         $query = mysqli_query($idCone,$sql);
         $resultado = array();
         while($F  = mysqli_fetch_array($query))$resultado[]  = $F;
@@ -22,7 +22,7 @@ class ListaTrucks{
     function MostrarTruck($id){
         $conexion = new ConexionBD();
         $idCone = $conexion ->Conectar();
-        $sql = "SELECT tcompany FROM Trucks Where TNumber  =".$id;
+        $sql = "SELECT tcompany FROM Trucks Where IDTKNumber  =".$id;
         $query = mysqli_query($idCone,$sql);
         $resultado = array();
         while($F  = mysqli_fetch_array($query))$resultado[]  = $F;

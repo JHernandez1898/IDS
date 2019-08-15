@@ -3,6 +3,9 @@ body{
      font-family: "Gudea",sans-serif;
     margin: 0px;
 }
+.menuicon{
+    display: none;
+}
 .menubar {
     width: 12%;
     height: 100%;
@@ -59,4 +62,55 @@ h1{
         text-align: center;
         width: 80%;
     }
+}
+/*Phones*/
+@media only screen and (max-width: 400px) and (min-height: 600px){
+    .menuicon{
+        display: block;
+        margin-left: 3vw;
+        margin-top: 2vw;
+        
+    }
+    .headliner{
+        margin-top: 12%;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+    }
+    .menubar {
+        width: 100%;
+        height: 7%;
+        background-color: rgb(40,97,40);
+        color: white;
+        position:fixed;
+	   z-index:1000;
+    }
+    .menubar ul{
+        display: none;
+        list-style: none;
+        margin:0px;
+        padding: 0px;
+    }
+
+.menubar ul li{
+    background-color: transparent;
+    font-size: 15px;
+    color: white;
+    width: 100%;
+    height: 5vh;
+    padding-top: 2.5vh;    
+}
+.menubar ul li a{
+    color: white;
+    padding-left: 2vw;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+.menubar ul li:hover{
+    background-color:rgba(52,121,52,0.77);
+    color: black;
+    width: 100%;  
+}
 }

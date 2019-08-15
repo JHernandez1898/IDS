@@ -5,8 +5,8 @@ $lstTrailers  =  new ListaTrailers();
 switch($funcion){
     case "RegistrarTrailer":
         try{
-        $numero = $_POST["tranumber"];
-        $compania = $_POST["tracompania"];
+        $numero = $_POST["tnumber"];
+        $compania = $_POST["compania"];
         $ruta = "img/trailers/".$numero.".jpg";
         $datos =  array($numero,$compania,$ruta);
         $respuesta = $lstTrailers -> AgregarTrailer($datos);
@@ -14,7 +14,6 @@ switch($funcion){
         catch(Exception $e){
             echo "error: ".$e->getMessage();
         }
-        
     break;
     case "MostrarTrailers":
         $resultado = $lstTrailers -> MostrarTrailers();

@@ -8,11 +8,11 @@ switch($funcion){
             $driverid = $_POST["driverid"];
             $drivername = $_POST["drivername"];
             $driverlastname =$_POST["driverlastname"];
-            $ruta = "img/trailers/".$driverid.".jpg";
-            $datos =  array($driverid,$drivername,$driverlastname,$ruta);
+            
+            $datos =  array($driverid,$drivername,$driverlastname);
             $respuesta = $lstDrivers -> AgregarDriver($datos);
         }
-        catch(Exception $e){ echo "Debe de agregar un número o compañia";   }                                   
+        catch(Exception $e){ echo "error: ".$e->getMessage();   }                                   
     break;
     case "MostrarDrivers":
         $resultado = $lstDrivers -> MostrarDrivers();

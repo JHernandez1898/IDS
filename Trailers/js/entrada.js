@@ -221,3 +221,21 @@ function MostrarTrailer(){
             }
      });
 }
+
+function MostrarConsignas(){
+    $.ajax({
+        type: 'POST',
+        async:false,
+        url: 'php/ControladorEntrada.php',
+        data: "funcion=MostrarConsignas",
+        success:function(response){
+         
+            var val =  eval(response);
+            var html;
+            for (i=0;i<val.length;i++){
+                html += "<option value = "+val[i][0]+">";
+            }
+            $("#consignas").html(html);
+        }
+    });
+}

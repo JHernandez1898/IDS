@@ -32,6 +32,10 @@ switch($funcion){
     case "getid":
         $id  = $_POST['id'];
         $resuldado = $lstEntrada -> getID($id);
+        break; 
+    case "MostrarConsignas":
+        $resultado  =  $lstEntrada ->MostrarConsignas();
+        echo json_encode($resultado);
         break;
 }
 ?>

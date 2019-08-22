@@ -104,7 +104,7 @@
                     </datalist>
                     <span>Consigment: </span><br>
                     <input type="text" list ="consignas" id="consigna" name="consigna"  class="select">
-                    <script>MostrarConsigna()</script>
+                    <script>MostrarConsignas()</script>
 
                 </td>
             </tr>
@@ -148,23 +148,7 @@
                     
                     <div class="upload-btn-wrapper">
                     <button class="btn"><img id='img1' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
-                    <input type="file" name="file1" id="file1"  />
-                    </div>
-                    <div class="upload-btn-wrapper">
-                    <button class="btn"><img id='img2' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
-                    <input type="file"  name="file2" id="file2" capture="camera" />
-                    </div>
-                    <div class="upload-btn-wrapper">
-                    <button class="btn"><img id='img3' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
-                    <input type="file"  name="file3" id="file3"  capture="camera" />
-                    </div>
-                    <div class="upload-btn-wrapper">
-                    <button class="btn"><img id='img4' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
-                    <input type="file"  name="file4" id="file4"  capture="camera"/>
-                    </div>
-                    <div class="upload-btn-wrapper">
-                    <button class="btn"><img id='img5' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
-                    <input type="file"  name="file5" id="file5"   capture="camera" />
+                    <input type="file" name="file1[]" capture="camera" accept = "image/*" id="file1" multiple  />
                     </div>
                 </td>
             </tr>

@@ -38,13 +38,12 @@
                 <th><img src="img/uno.png"><span>Truck Information</span></th>
             </tr>
             <tr>
-                <td>
+                <td id="datostruck">
                     <span>Truck #: </span><br>
                     <datalist id='trucks'>
                     </datalist>
                     <input type="text" list ="trucks" name="trucknumber" id="trucknumber" onchange="MostrarTruck()">
                     <script>MostrarTrucks()</script>
-                    <button onclick="MostrarRegistroTrucks()" class="btnRegistro">New</button>
                 </td>
             </tr>
             <tr id="registrotruck">
@@ -60,13 +59,13 @@
                 <th><img src="img/dos.png"><span>Driver Information</span></th>
             </tr>
             <tr>
-                <td>
+                <td id="datosdriver">
                     <span>Driver ID: </span><br>
                      <datalist id='drivers'>
                     </datalist>
                      <input type="text" list ="drivers" id="driverid" name="driverid" onchange="MostrarDriver()">
                     <script>MostrarDrivers()</script>
-                    <button onclick="MostrarRegistroDrivers()" class="btnRegistro">New</button>
+                    
                 </td>
             </tr>
             <tr id="registrardriver">
@@ -80,13 +79,13 @@
                 <th><img src="img/tres.png"><span>Trailer Information</span></th>
             </tr>
             <tr>
-                <td>
+                <td id="datostrailer">
                     <span>Trailer #: </span><br>
                     <datalist id='trailers'>
                     </datalist>
                     <input type="text" list ="trailers" id="tnumber" name="tnumber"  onchange="MostrarTrailer()" class="select">
                     <script>MostrarTrailers()</script>
-                    <button onclick="MostrarRegistroTrailer()" class="btnRegistro">New</button>
+                    
                 </td>
             </tr>
             <tr id="campos">

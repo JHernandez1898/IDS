@@ -138,6 +138,7 @@ function MostrarDriver(){
                 var val =  eval(response);
                 if(response!="[]"){
                 var html="<td><strong>Name: </strong>"+val[0][0]+"</br> </td>";
+                $("#datosdriver").css("background-color",'#6DA03B');
                 $("#registrardriver").html(html);
                 }else{
                     alert("Please, register the name of the driver");
@@ -211,6 +212,7 @@ function MostrarTrailer(){
                 var val =  eval(response);
                 if(response!="[]"){
                 var html="<td><strong>Company: </strong>"+val[0][0]+"</br> </td>";
+                $("#datostrailer").css("background-color",'#6DA03B');
                 $("#campos").html(html);}
                 else{
                     

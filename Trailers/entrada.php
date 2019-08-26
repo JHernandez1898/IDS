@@ -136,48 +136,18 @@
                     <option value="DELIVERY">DELIVERY</option>
                     <option value="DROP">DROP</option>
                     </select>
-                    <input type="file" name="file1[]" capture="camera" accept = "image/*" id="file1" multiple  />
-                     <button onclick="RegistrarEntrada()" class="btnCompleto">Register Entry</button>
+                    <button onclick="RegistrarEntrada()" class="btnCompleto">Register Entry</button>
                 </td>
             </tr>
         </table>
         </article>
         <article class="articulo">
-        <table class="tablageneral">
-            <tr>
-                <th><span>Images</span></th>
-            </tr>
-            <tr>
-                <td>
-                    <div class="owl-carousel">
-                        <div> <img src="img/fotos/21.jpg" height="200px"> </div>
-                        <div> <img src="img/fotos/22.jpg" height="200px"> </div>
-                        <div><img src="img/fotos/22.jpg" height="200px"></div>
-                        <div> <img src="img/fotos/21.jpg" height="200px"> </div>
-                        <div> <img src="img/fotos/21.jpg" height="200px"></div>
-                    </div>
-                
-                </td>
-            </tr>
-        </table>
-        </article>
-      
     </section>
      
     
        <script>
            
 
-document.getElementById("file1").onchange = function(e) {
-  let reader = new FileReader();
-  reader.readAsDataURL(e.target.files[0]);
-  reader.onload = function(){
-      $('#img1').attr("src",reader.result);
-  };
-}
-$(document).ready(function(){
-  $(".owl-carousel").owlCarousel();
-});
 function RegistrarEntrada(){
     var trailernumber = $("#tnumber").val();
     var driverid  = $("#driverid").val();
@@ -196,11 +166,6 @@ function RegistrarEntrada(){
     form.append("LDMT",LDMT);
     form.append("tipo",tipo);
     form.append("hora",hora);
-    form.append("img1",$("#file1")[0].files[0]);
-    form.append("img2",$("#file2")[0].files[0]);
-    form.append("img3",$("#file3")[0].files[0]);
-    form.append("img4",$("#file4")[0].files[0]);
-    form.append("img5",$("#file5")[0].files[0]);
     form.append("funcion","RegistrarEntrada");
     
     $.ajax({
@@ -210,7 +175,7 @@ function RegistrarEntrada(){
         processData: false,  // tell jQuery not to process the data
         contentType: false,
         success: function(response){
-                if(response == "11"){
+                if(response == "1"){
                     alert("Succesful");
                     location.href=  "storage.php";
                 }

@@ -26,6 +26,8 @@ function RegistrarSalida(identrada,idestadia){
         processData: false, 
         contentType: false,
         success:function(response){
+            alert("Log out successful");
+            location.href ="storage.php";  
            
         }
     })

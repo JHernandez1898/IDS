@@ -37,6 +37,7 @@ function RegistrarEstadia(n){
         processData: false,  // tell jQuery not to process the data
         contentType: false,
         success: function(response){
+            alert(response);
             location.href ="storage.php";
              
         }

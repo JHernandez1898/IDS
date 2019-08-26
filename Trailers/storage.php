@@ -40,12 +40,8 @@
         <th></th>
         </tr>
         <tbody id="info">
-        
         </tbody>
-            
-        
-    </table>
-    
+        </table>
     </section>
     
 </body>

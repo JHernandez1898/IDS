@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trailers IDS</title>
+    <link rel="stylesheet" href="css/owlcarrousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owlcarrousel/assets/owl.theme.default.min.css">
     <link href="css/estilo.css" rel="stylesheet">
     <link href="css/entrada.css" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="css/owlcarrousel/owl.carousel.min.js"></script>
     <script src="js/entrada.js"></script>
 
 </head>
@@ -133,6 +136,7 @@
                     <option value="DELIVERY">DELIVERY</option>
                     <option value="DROP">DROP</option>
                     </select>
+                    <input type="file" name="file1[]" capture="camera" accept = "image/*" id="file1" multiple  />
                      <button onclick="RegistrarEntrada()" class="btnCompleto">Register Entry</button>
                 </td>
             </tr>
@@ -145,11 +149,14 @@
             </tr>
             <tr>
                 <td>
-                    
-                    <div class="upload-btn-wrapper">
-                    <button class="btn"><img id='img1' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
-                    <input type="file" name="file1[]" capture="camera" accept = "image/*" id="file1" multiple  />
+                    <div class="owl-carousel">
+                        <div> <img src="img/fotos/21.jpg" height="200px"> </div>
+                        <div> <img src="img/fotos/22.jpg" height="200px"> </div>
+                        <div><img src="img/fotos/22.jpg" height="200px"></div>
+                        <div> <img src="img/fotos/21.jpg" height="200px"> </div>
+                        <div> <img src="img/fotos/21.jpg" height="200px"></div>
                     </div>
+                
                 </td>
             </tr>
         </table>
@@ -168,35 +175,9 @@ document.getElementById("file1").onchange = function(e) {
       $('#img1').attr("src",reader.result);
   };
 }
-
-document.getElementById("file2").onchange = function(e) {
-  let reader = new FileReader();
-  reader.readAsDataURL(e.target.files[0]);
-  reader.onload = function(){
-      $('#img2').attr("src",reader.result);
-  };
-}
-document.getElementById("file3").onchange = function(e) {
-  let reader = new FileReader();
-  reader.readAsDataURL(e.target.files[0]);
-  reader.onload = function(){
-      $('#img3').attr("src",reader.result);
-  };
-}
-document.getElementById("file4").onchange = function(e) {
-  let reader = new FileReader();
-  reader.readAsDataURL(e.target.files[0]);
-  reader.onload = function(){
-      $('#img4').attr("src",reader.result);
-  };
-}
-document.getElementById("file5").onchange = function(e) {
-  let reader = new FileReader();
-  reader.readAsDataURL(e.target.files[0]);
-  reader.onload = function(){
-      $('#img5').attr("src",reader.result);
-  };
-}
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel();
+});
 function RegistrarEntrada(){
     var trailernumber = $("#tnumber").val();
     var driverid  = $("#driverid").val();

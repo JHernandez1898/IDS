@@ -56,5 +56,14 @@ class ListaEntrada{
         if($query)echo 1;
         else throw new  Exception(mysqli_error($idCone));
     }
+    function MostrarConsignas(){
+        $conexion = new ConexionBD();
+        $idCone = $conexion -> Conectar();
+        $sql = "select distinct consignacion from entrada";
+        $query = mysqli_query($idCone,$sql);
+        $resultado = array();
+        while($F  = mysqli_fetch_array($query)) $resultado[] = $F;
+        return($resultado);   
+    }
 }
 ?>

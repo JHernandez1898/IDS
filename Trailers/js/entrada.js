@@ -1,8 +1,4 @@
 
-
-
-
-
 function MostrarRegistroTrucks(){
      $.ajax({
             type: 'POST',
@@ -10,7 +6,6 @@ function MostrarRegistroTrucks(){
             url: 'php/ControladorTrailer.php',
             data: "funcion=Mostrar",
             success: function(response){
-                
                 var html="<td></span><span>Company: </span><input type='text' name='truckcompany' id='truckcompany'  class='txt'><input type='button' onclick='RegistrarTruck()' class='registrar' value='Save'></td>";
                 $("#registrotruck").html(html);
             }
@@ -32,6 +27,8 @@ function RegistrarTruck(){
             success: function(response){
                 if(response==1){alert("Successful registration, continue with the registration")}
                 MostrarTrucks();
+                MostrarTruck();
+                $("#datostruck").css("background-color","#6DA03B");
             }
      });    
  }
@@ -60,8 +57,16 @@ function MostrarTruck(){
             data: "funcion=MostrarTruck&trucknumber="+seleccionado,
             success: function(response){
                 var val =  eval(response);
+                if(response != '[]'){
                 var html="<td><strong>Company: </strong>"+val[0][0]+"</br> </td>";
                 $("#registrotruck").html(html);
+                $("#datostruck").css("background-color",'#6DA03B');
+                }else{
+                    alert("Please, register this new truck's company");
+                    $("#datostruck").css("background-color",'#EC8787');
+                    MostrarRegistroTrucks();
+                    
+                } 
             }
      });
 }
@@ -96,8 +101,13 @@ function RegistrarDriver(){
             contentType: false,
             success: function(response){
                 alert(response);
-                if(response==1){alert("Successful registration, continue with the registration")}
-                MostrarDrivers();
+                if(response==1){alert("Successful registration, continue with the registration")
+                       $("#datosdriver").css("background-color","#6DA03B");
+                        MostrarDrivers();
+                        MostrarDriver();
+                               
+                }
+                
             }
      });    
  }
@@ -126,8 +136,15 @@ function MostrarDriver(){
             data: "funcion=MostrarDriver&driverid="+seleccionado,
             success: function(response){
                 var val =  eval(response);
+                if(response!="[]"){
                 var html="<td><strong>Name: </strong>"+val[0][0]+"</br> </td>";
                 $("#registrardriver").html(html);
+                }else{
+                    alert("Please, register the name of the driver");
+                     $("#datosdriver").css("background-color",'#EC8787');
+                    MostrarRegistroDrivers();
+                    
+                }
             }
      });
 }
@@ -146,8 +163,12 @@ function RegistrarTrailer(){
             processData: false,  // tell jQuery not to process the data
             contentType: false,
             success: function(response){
-                if(response==1){alert("Successful registration, continue with the registration")}
-                MostrarTrailers();
+                if(response==1){alert("Successful registration, continue with the registration")     
+                 $("#datostrailer").css("background-color","#6DA03B");
+                        MostrarTrailers();
+                        MostrarTrailer();               
+                }
+               
             }
      });       
  }
@@ -188,8 +209,33 @@ function MostrarTrailer(){
             data: "funcion=MostrarTrailer&idtra="+seleccionado,
             success: function(response){
                 var val =  eval(response);
+                if(response!="[]"){
                 var html="<td><strong>Company: </strong>"+val[0][0]+"</br> </td>";
-                $("#campos").html(html);
+                $("#campos").html(html);}
+                else{
+                    
+                    alert("Please, register company of the trailer");
+                     $("#datostrailer").css("background-color",'#EC8787');
+                    MostrarRegistroTrailer()
+                }
             }
      });
+}
+
+function MostrarConsignas(){
+    $.ajax({
+        type: 'POST',
+        async:false,
+        url: 'php/ControladorEntrada.php',
+        data: "funcion=MostrarConsignas",
+        success:function(response){
+         
+            var val =  eval(response);
+            var html;
+            for (i=0;i<val.length;i++){
+                html += "<option value = "+val[i][0]+">";
+            }
+            $("#consignas").html(html);
+        }
+    });
 }

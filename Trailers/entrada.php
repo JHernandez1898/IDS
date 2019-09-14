@@ -148,7 +148,23 @@
                     
                     <div class="upload-btn-wrapper">
                     <button class="btn"><img id='img1' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
-                    <input type="file" name="file1[]" capture="camera" accept = "image/*" id="file1" multiple  />
+                    <input type="file" name="file1" capture="camera" accept = "image/*" id="file1" />
+                    </div>
+                     <div class="upload-btn-wrapper">
+                    <button class="btn"><img id='img2' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
+                    <input type="file" name="file2" capture="camera" accept = "image/*" id="file2" />
+                    </div>
+                     <div class="upload-btn-wrapper">
+                    <button class="btn"><img id='img3' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
+                    <input type="file" name="file3" capture="camera" accept = "image/*" id="file3"/>
+                    </div>
+                     <div class="upload-btn-wrapper">
+                    <button class="btn"><img id='img4' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
+                    <input type="file" name="file4" capture="camera" accept = "image/*" id="file4"/>
+                    </div>
+                     <div class="upload-btn-wrapper">
+                    <button class="btn"><img id='img5' src="img/a%C3%B1adirimagen.png" width="170" height="170"></button>
+                    <input type="file" name="file5" capture="camera" accept = "image/*" id="file5"/>
                     </div>
                 </td>
             </tr>
@@ -229,10 +245,9 @@ function RegistrarEntrada(){
         processData: false,  // tell jQuery not to process the data
         contentType: false,
         success: function(response){
-                if(response == "11"){
-                    alert("Succesful");
+          
                     location.href=  "storage.php";
-                }
+                
             }
      });
 }   

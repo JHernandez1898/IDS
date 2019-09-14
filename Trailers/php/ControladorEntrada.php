@@ -20,8 +20,11 @@ switch($funcion){
             $datos = array($trucknumber,$tnumber,$driverid,$sealnumber,$LDMT,$tipo,$consigna);
             $respuesta = $lstEntrada-> AgregarEntrada($datos);
             $identrada = $lstEntrada->Pop();
-            $datos =array($identrada,$img1,$img2,$img3,$img4,$img5);
-            $lstEntrada->SubirFotos($datos);
+            $img =array($identrada,$img1,$img2,$img3,$img4,$img5);
+            $lstEntrada->SubirFotos($img); 
+            echo json_encode($respuesta);
+            
+           
         }
         catch(Exception $e){ echo "Error:".$e->getMessage();   }                                   
     break;
